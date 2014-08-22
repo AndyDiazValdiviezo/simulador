@@ -1,0 +1,113 @@
+.cont-diagrama .paper {
+  width: 100%;
+}
+.cont-diagrama .paper[links-enable=false] .puerto {
+  pointer-events: none;
+}
+.cont-diagrama #diagrama {
+  position: relative;
+  z-index: 10;
+  display: inline-block;
+  height: 100%;
+}
+.cont-diagrama #diagrama svg {
+  margin-bottom: -5px;
+}
+.cont-diagrama #diagrama .modelLink .connection {
+  stroke: #666;
+}
+.cont-diagrama #diagrama .modelLink .connection-wrap {
+  stroke-width: 10px;
+  stroke-linecap: butt;
+  transition: all 0.5s linear 0.2s;
+}
+.cont-diagrama #diagrama .modelLink .connection-wrap:hover {
+  stroke: transparent;
+  transition: all 0s;
+}
+.cont-diagrama #diagrama .modelLink .link-tools .tool-remove circle {
+  fill: white;
+  stroke: #ccc;
+  stroke-width: 1px;
+  stroke-opacity: .5;
+  transition: fill 1s;
+}
+.cont-diagrama #diagrama .modelLink .link-tools .tool-remove path {
+  stroke: #ccc;
+}
+.cont-diagrama #diagrama .modelLink .link-tools .tool-remove:hover {
+  fill: #e74c3c;
+  stroke: #c0392b;
+}
+.cont-diagrama #diagrama .modelLink .link-tools .tool-remove:hover path {
+  stroke: none;
+}
+.cont-diagrama #diagrama .modelLink .marker-arrowhead,
+.cont-diagrama #diagrama .modelLink .marker-vertex {
+  fill: #fff;
+  stroke: #7f8c8d;
+  stroke-opacity: 0.4;
+  stroke-width: 2px;
+}
+.cont-diagrama #diagrama .modelLink .marker-arrowhead:hover,
+.cont-diagrama #diagrama .modelLink .marker-vertex:hover {
+  fill: #ecf0f1;
+  stroke: #bdc3c7;
+}
+.cont-diagrama #diagrama .modelLink .marker-vertex-remove-area {
+  fill: white;
+  stroke: #ccc;
+  stroke-opacity: .5;
+}
+.cont-diagrama #diagrama .modelLink .marker-vertex-remove-group:hover .marker-vertex-remove-area {
+  transition: fill 1s;
+  fill: #e74c3c;
+  stroke: #c0392b;
+}
+.cont-diagrama #diagrama .modelLink .marker-vertex-remove-group:hover .marker-vertex-remove {
+  stroke: none;
+}
+.cont-diagrama #diagrama .modelLink .marker-vertex-remove {
+  stroke: #eee;
+}
+.cont-diagrama #diagrama .modelLink .element .highlighted {
+  outline: none;
+  fill: #ecf0f1;
+  stroke: #bdc3c7;
+  cursor: crosshair;
+}
+.cont-diagrama #diagrama .modelLink .element .body {
+  fill: #ecf0f1;
+  stroke: #bdc3c7;
+  stroke-opacity: 0.5;
+  transition: all 0.2s;
+}
+.cont-diagrama #diagrama .modelLink .element circle {
+  fill: #fff;
+  stroke: #7f8c8d;
+  stroke-opacity: 0.5;
+  stroke-width: 2px;
+}
+.cont-diagrama #diagrama .modelLink .element text {
+  fill: #333;
+}
+.cont-diagrama #diagrama .modelLink .element.live .body {
+  fill: #2ecc71;
+  stroke: #27ae60;
+}
+.cont-diagrama #diagrama .modelLink .element.live text {
+  fill: #ffffff;
+}
+.cont-diagrama #diagrama .modelLink .live .connection {
+  stroke: #2ecc71;
+  stroke-width: 3px;
+}
+.cont-diagrama #diagrama .modelLink .live .connection-wrap {
+  stroke: #2ecc71;
+}
+.cont-diagrama #diagrama .puerto [magnet=true]:not(.element) {
+  cursor: pointer;
+}
+.cont-diagrama #diagrama .puerto [magnet=true]:not(.element):hover {
+  opacity: .7;
+}

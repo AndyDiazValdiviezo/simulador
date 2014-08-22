@@ -1,0 +1,65 @@
+.border-box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.content-box {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.cont-paleta .paleta {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  margin: 0;
+}
+.cont-paleta .paleta .panel {
+  margin: 0px;
+  border: none;
+  border-radius: 0px 0px 0px 0px;
+  -ms-border-radius: 0px 0px 0px 0px;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -khtml-border-radius: 0px 0px 0px 0px;
+}
+.cont-paleta .paleta .panel .panel-heading {
+  font-family: sans-serif;
+  padding: 0;
+  background-color: #FFF;
+  border-top: 2px solid #999;
+  color: #666;
+  border-radius: 0px 0px 0px 0px;
+  -ms-border-radius: 0px 0px 0px 0px;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -khtml-border-radius: 0px 0px 0px 0px;
+}
+.cont-paleta .paleta .panel .panel-heading h4 {
+  font-size: 12px;
+}
+.cont-paleta .paleta .panel .panel-heading h4 a {
+  display: inline-block;
+  width: 100%;
+  padding: 8px 10px;
+}
+.cont-paleta .paleta .panel .panel-heading h4 a:hover {
+  text-decoration: none;
+}
+.cont-paleta .paleta .panel .panel-collapse .panel-body .cont-elemento {
+  text-align: center;
+}
+.cont-paleta .paleta .panel .panel-collapse .panel-body .cont-elemento .draggable {
+  display: inline-block;
+  cursor: pointer;
+  border: 1px dotted #DDD;
+}
+.cont-paleta .paleta .panel .panel-collapse .panel-body .cont-elemento .draggable svg {
+  float: left;
+}
+.cont-paleta .paleta .panel .panel-collapse .panel-body .cont-elemento .nombre {
+  display: block;
+  font-size: 12px;
+  font-family: sans-serif;
+  color: #666;
+}

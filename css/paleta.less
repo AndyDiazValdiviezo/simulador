@@ -1,0 +1,56 @@
+@import 'globales.less';
+@import 'parametros.less';
+
+.cont-paleta{
+  .paleta{
+    position: relative;
+    z-index: 20;
+    width: 100%;
+    margin: 0;
+    .panel{
+      margin: 0px;
+      border: none;
+      .corner(0px, 0px, 0px, 0px);
+      .panel-heading{
+        font-family: @font-1;
+        padding: 0;
+        background-color: #FFF;
+        border-top: 2px solid #999;
+        color: #666;
+        .corner(0px, 0px, 0px, 0px);
+        h4{
+          font-size: 12px;
+          a{
+            display: inline-block;
+            width: 100%;
+            padding: 8px 10px;
+          }
+          a:hover{
+            text-decoration: none;
+          }
+        }
+      }
+      .panel-collapse{
+        .panel-body{
+          .cont-elemento{
+            text-align: center;
+            .draggable{
+              display: inline-block;
+              cursor: pointer;
+              border: 1px dotted #DDD;
+              svg{
+                float: left;
+              }
+            }
+            .nombre{
+              display: block;
+              font-size: 12px;
+              font-family: @font-1;
+              color: #666;
+            }
+          }
+        }
+      }
+    }
+  }
+}

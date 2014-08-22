@@ -1,0 +1,19 @@
+<div class="propiedades">
+  <div class="propiedad" ng-repeat="(key, propiedad) in elementoSeleccionado.datosModelo">
+    <div class="condicional" ng-if="propiedad.visible">
+      <label for="">{{propiedad.nombre}}</label>
+      <input ng-if="propiedad.formType == 'text'" type="text" class="form-control" placeholder="" ng-model="elementoSeleccionado.datosModelo[key].valor">
+      <select ng-if="propiedad.formType == 'select'" class="form-control" data-tipo="{{elementoSeleccionado.tipo}}" ng-model="elementoSeleccionado.datosModelo[key].valor" ng-options="obj.value as obj.text for obj in propiedad.opciones">
+      </select>
+    </div>
+  </div>
+  <div class="seccion" ng-repeat="(key, elemento) in elementoSeleccionado.datosModeloSeparados">
+  <span class="nombre">{{elemento.nombre}}</span>
+    <div class="propiedad" ng-repeat="(key2, propiedad) in elemento.datosModelo">
+      <div class="condicional" ng-if="propiedad.visible">
+        <label for="">{{propiedad.nombre}}</label>
+        <input ng-if="propiedad.formType == 'text'" type="text" class="form-control" placeholder="" ng-model="elementoSeleccionado.datosModeloSeparados[key].datosModelo[key2].valor">
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,3 @@
+var v1 = {'modulo': 5, 'angulo': 37};
+var v2 = {'modulo': 25, 'angulo': 16};
+sumarVectores(v1, v2);
