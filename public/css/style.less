@@ -1,0 +1,30 @@
+@import 'globales.less';
+@import 'parametros.less';
+
+html{
+  height: 100%;
+  body{
+    .ctnd-paleta{
+      .ctnd-canvas{
+        width: 50px;
+        height: 50px;
+      }
+      [id^="canvas-paleta"]{
+        width: 100%;
+        height: 100%;
+        border: 1px solid #DDD;
+        margin: 5px;
+        .content-box();
+      }
+    }
+    .ctnd-diagrama{
+      #canvas-diagrama{
+        height: 500px;
+      }
+    }
+    .ctnd-user-data{
+      min-height: 500px;
+      border-left: 1px solid #DDD;
+    }
+  }
+}

@@ -1,107 +1,100 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app">
+<html lang="es" ng-app="simuladorApp">
 <head>
   <meta charset="UTF-8">
   <title>.:: Simulador ::.</title>
 
-  <!-- Estilos -->
-  <link rel="stylesheet" href="css/joint.min.css">
-  <link rel="stylesheet" href="third-party/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
-  <link rel="stylesheet" href="third-party/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="third-party/jquery-terminal/jquery.terminal.css">
-  <link rel="stylesheet" href="css/paleta.css">
-  <link rel="stylesheet" href="css/diagrama.css">
-  <link rel="stylesheet" href="css/consola.css">
-  <link rel="stylesheet" href="css/propiedades.css">
-  <link rel="stylesheet" href="css/style.css">
+  <!-- CSS - Bootstrap -->
+  <link rel="stylesheet" href="public/third-party/bootstrap/css/bootstrap.min.css">
 
-  <!-- Google web fonts -->
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+  <!-- CSS - Propio -->
+  <link rel="stylesheet" href="public/css/style.css">
 </head>
 <body>
-  <header class="main-header" ng-controller="headerCtrl">
-    <button class="calcular boton" ng-click="calcular()">Calcular</button>
-    <button class="rotar-der boton" ng-click="rotarDerecha()">Rotar Der</button>
-    <button class="rotar-izq boton" ng-click="rotarIzquierda()">Rotar Izq</button>
-    <button class="rotar-izq boton" ng-click="clickBotonLink('linea')">Línea</button>
-    <button class="rotar-izq boton" ng-click="clickBotonLink('conexion')">Conexión</button>
-    <!-- <button class="importar boton" ng-click="importarDiagrama()">Importar</button> -->
-  </header>
+
   <div class="container-fluid">
-    <div class="row">
-      <div class="contenedor">
-        <div class="col-lg-2">
-          <div class="cont-paleta">
-            <div class="panel-group paleta" id="paleta" ng-controller="paletaCtrl">
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="panel-title">
-                    <a href=".collapse-1" data-toggle="collapse" data-parent="#paleta">Collapse 1</a>
-                  </h4>
-                </div>
-                <div class="panel-collapse collapse in collapse-1">
-                  <div class="panel-body">
-                    <paleta elementos="elementos"></paleta>
-                  </div>
-                </div>
-              </div>
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="panel-title">
-                    <a href=".collapse-2" data-toggle="collapse" data-parent="#paleta">Collapse 2</a>
-                  </h4>
-                </div>
-                <div class="panel-collapse collapse collapse-2">
-                  <div class="panel-body">
-                    asdasdasd
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-10">
-          <div class="cont-central" >
-            <div class="cont-diagrama" ng-controller="diagramaCtrl">
-              <div class="herramientas">
-                <a href="" class="eliminar"><span class="glyphicon glyphicon-remove-sign"></span></a>
-              </div>
-              <diagrama insertar-fn="insertarElemento(key, posX, posY)" seleccionar-fn="seleccionarElemento(modelId)"></diagrama>
-            </div>
-            <div class="cont-consola" ng-controller="consolaCtrl">
-              <consola></consola>
-            </div>
-          </div>
-          <div class="cont-propiedades" ng-controller="propiedadesCtrl">
-            <propiedades></propiedades>
-          </div>
-        </div>
+    <div class="row seccion-header" ng-controller="HeaderCtrl as header">
+      <div class="col-lg-12">
+        <div class="btn btn-primary" ng-click="zoomIn()">ZoomIn</div>
+        <div class="btn btn-primary" ng-click="zoomOut()">ZoomOut</div>
+        <div class="btn btn-warning" ng-click="exportar()">Exportar</div>
+        <div class="btn btn-danger" ng-click="guardar()">Guardar</div>
+        <div class="btn btn-default" ng-click="conexion()">Conexión</div>
+        <div class="btn btn-default" ng-click="linea()">Línea</div>
+        <input type="file" fileread="file">
       </div>
     </div>
+    <div class="row">
+      <div class="col-lg-1 ctnd-paleta" ng-controller="PaletaCtrl as paleta">
+        <paleta>
+          <div class="ctnd-canvas" ng-repeat="elemento in svgElemOrdenados()">
+            <div id="canvas-paleta-{{ $index }}" data-name="{{ elemento.NAME }}"></div>
+          </div>
+        </paleta>
+      </div>
+      <div class="col-lg-9 ctnd-diagrama" ng-controller="DiagramaCtrl as diagrama">
+        <diagrama>
+          <div id="canvas-diagrama"></div>
+        </diagrama>
+      </div>
+      <div class="col-lg-2 ctnd-user-data" ng-controller="UserDataCtrl as userData">
+        <userdata></userdata>
+      </div>
+    </div>
+    <div class="row"></div>
   </div>
-  <!-- Scripts externos -->
-  <script src="third-party/jointjs/js/joint.js"></script>
-  <script src="third-party/jointjs/js/joint.shapes.devs.js"></script>
-  <script src="third-party/jointjs/js/joint.shapes.logic.js"></script>
-  <script src="third-party/jquery-ui/js/jquery-1.10.2.js"></script>
-  <script src="third-party/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
-  <script src="third-party/jquery-mousewheel/jquery.mousewheel.min.js"></script>
-  <script src="third-party/jquery-terminal/jquery.terminal-0.8.8.min.js"></script>
-  <script src="third-party/bootstrap/js/bootstrap.min.js"></script>
-  <script src="third-party/angular-js/js/angular.min.js"></script>
-  <script src="third-party/math-js/math.min.js"></script>
-  <!-- Helpers -->
-  <script src="js/lib-matematica.js"></script>
-  <script src="js/lib-electrica.js"></script>
-  <script src="js/helpers.js"></script>
-  <!-- Data -->
-  <script src="js/modelos.js"></script>
-  <script src="js/lib-elementos.js"></script>
-  <!-- Angular JS -->
-  <script src="js/ng-app.js"></script>
-  <script src="js/ng-services.js"></script>
-  <script src="js/ng-directives.js"></script>
-  <script src="js/ng-controllers.js"></script>
+
+
+  <!-- Scripts - Draw2D - libs -->
+  <script src="public/third-party/draw2d/lib/jquery-1.10.2.min.js"></script>
+  <script src="public/third-party/draw2d/lib/jquery.autoresize.js"></script>
+  <script src="public/third-party/draw2d/lib/jquery-touch_punch.js"></script>
+  <script src="public/third-party/draw2d/lib/jquery.contextmenu.js"></script>
+  <script src="public/third-party/draw2d/lib/shifty.js"></script>
+  <script src="public/third-party/draw2d/lib/raphael.js"></script>
+  <script src="public/third-party/draw2d/lib/rgbcolor.js"></script>
+  <script src="public/third-party/draw2d/lib/canvg.js"></script>
+  <script src="public/third-party/draw2d/lib/Class.js"></script>
+  <script src="public/third-party/draw2d/lib/json2.js"></script>
+  <script src="public/third-party/draw2d/lib/pathfinding-browser.min.js"></script>
+
+  <!-- Scripts - Draw2D - src -->
+  <script src="public/third-party/draw2d/src/draw2d.js"></script>
+
+  <!-- Scripts - AngularJS -->
+  <script src="public/third-party/angular-js/angular.min.js"></script>
+
+  <!-- Scripts - Jquery UI -->
+  <script src="public/third-party/jquery-ui/jquery-ui.min.js"></script>
+
+  <!-- Scripts - UI Bootstrap -->
+  <script src="public/third-party/ui-bootstrap/ui-bootstrap-tpls-0.11.0.min.js"></script>
+
+  <!-- Scripts - FileSaver -->
+  <script src="public/third-party/FileSaver/FileSaver.js"></script>
+
+  <!-- Scripts - Lógica -->
+  <script src="public/js/Globales.js"></script>
+  <script src="public/js/Locators.js"></script>
+  <script src="public/js/Ports.js"></script>
+  <script src="public/js/SVGs.js"></script>
+  <script src="public/js/Figures.js"></script>
+  <script src="public/js/app.js"></script>
+  <!-- Servicios -->
+  <script src="public/js/services/DefaultSrvc.js"></script>
+  <script src="public/js/services/FiguresSrvc.js"></script>
+  <script src="public/js/services/StorageSrvc.js"></script>
+  <script src="public/js/services/MixinSrvc.js"></script>
+  <!-- Controladores -->
+  <script src="public/js/controllers/HeaderCtrl.js"></script>
+  <script src="public/js/controllers/PaletaCtrl.js"></script>
+  <script src="public/js/controllers/DiagramaCtrl.js"></script>
+  <script src="public/js/controllers/UserDataCtrl.js"></script>
+  <script src="public/js/controllers/SaveAsCtrl.js"></script>
+  <!-- Directivas -->
+  <script src="public/js/directives/PaletaDrtv.js"></script>
+  <script src="public/js/directives/DiagramaDrtv.js"></script>
+  <script src="public/js/directives/UserDataDrtv.js"></script>
+  <script src="public/js/directives/FileReadDrtv.js"></script>
 </body>
 </html>
