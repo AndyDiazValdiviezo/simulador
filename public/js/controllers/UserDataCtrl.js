@@ -13,6 +13,18 @@
         };
       }
     }
+
+    $scope.getCampoGrupo = function(nombreGrupo, nombreCampo) {
+      for (var prop in $scope.elementoSeleccionado.getUserData()) {
+        if (nombreGrupo == prop) {
+          for (var prop2 in $scope.elementoSeleccionado.getUserData()[prop]) {
+            if (nombreCampo == prop2) {
+              return $scope.elementoSeleccionado.getUserData()[prop][prop2];
+            };
+          }
+        };
+      }
+    }
   }
 
   angular

@@ -14,17 +14,6 @@
             $element.find('#canvas-paleta-' + i).draggable({
               helper: 'clone',
               cursor: 'crosshair',
-              stop: function(event, ui) {
-                var name = ui.helper.data('name');
-
-                var width = $(this).width();
-                var height = $(this).height();
-
-                var x = ui.position.left + (width / 2);
-                var y = ui.position.top;
-
-                FiguresSrvc.agrElmDiagrama(name, width, x, y);
-              },
             });
 
             var elemento = $scope.svgElemOrdenados()[i];

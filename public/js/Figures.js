@@ -314,6 +314,7 @@ Transformador3D = Figure.extend({
           value: '',
         },
       },
+      titulo: 'Datos generales',
       admitanciaCapacitiva: {
         name: 'admitanciaCapacitiva',
         value: '',

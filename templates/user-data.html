@@ -1,177 +1,258 @@
 <!-- Barra -->
 <div ng-if="elementoSeleccionado.NAME == 'Barra'">
-  <!-- Voltaje -->
-  <div class="col-lg-12">
-    <div class="form-group">
-      <label for="{{ getCampo('voltaje').name }}">{{ getCampo('voltaje').label }}</label>
-      <input type="text" name="{{ getCampo('voltaje').name }}" id="{{ getCampo('voltaje').name }}" ng-model="getCampo('voltaje').value" class="form-control">
+  <div class="row">
+    <!-- Voltaje -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampo('voltaje').name }}">{{ getCampo('voltaje').label }}</label>
+        <input type="text" name="{{ getCampo('voltaje').name }}" id="{{ getCampo('voltaje').name }}" ng-model="getCampo('voltaje').value" class="form-control" format tipo="decimal">
+      </div>
     </div>
-  </div>
 
-  <!-- Desfase -->
-  <div class="col-lg-12">
-    <div class="form-group">
-      <label for="{{ getCampo('desfase').name }}">{{ getCampo('desfase').label }}</label>
-      <input type="text" name="{{ getCampo('desfase').name }}" id="{{ getCampo('desfase').name }}" ng-model="getCampo('desfase').value" class="form-control">
+    <!-- Desfase -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampo('desfase').name }}">{{ getCampo('desfase').label }}</label>
+        <input type="text" name="{{ getCampo('desfase').name }}" id="{{ getCampo('desfase').name }}" ng-model="getCampo('desfase').value" class="form-control" format tipo="decimal">
+      </div>
     </div>
-  </div>
 
-  <!-- Fse trafo -->
-  <div class="col-lg-12">
-    <div class="form-group">
-      <label for="{{ getCampo('faseTrafo').name }}">{{ getCampo('faseTrafo').label }}</label>
-      <input type="text" name="{{ getCampo('faseTrafo').name }}" id="{{ getCampo('faseTrafo').name }}" ng-model="getCampo('faseTrafo').value" class="form-control">
+    <!-- Fase trafo -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampo('faseTrafo').name }}">{{ getCampo('faseTrafo').label }}</label>
+        <input type="text" name="{{ getCampo('faseTrafo').name }}" id="{{ getCampo('faseTrafo').name }}" ng-model="getCampo('faseTrafo').value" class="form-control" format tipo="decimal">
+      </div>
     </div>
   </div>
 </div>
 
 <!-- Generador SW -->
 <div ng-if="elementoSeleccionado.NAME == 'GeneradorSW'">
-  <!-- Mod. Voltaje -->
-  <div class="col-lg-12">
-    <div class="form-group">
-      <label for="{{ getCampo('voltajeModulo').name }}">{{ getCampo('voltajeModulo').label }}</label>
-      <input type="text" name="{{ getCampo('voltajeModulo').name }}" id="{{ getCampo('voltajeModulo').name }}" ng-model="getCampo('voltajeModulo').value" class="form-control">
+  <div class="row">
+    <!-- Mod. Voltaje -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampo('voltajeModulo').name }}">{{ getCampo('voltajeModulo').label }}</label>
+        <input type="text" name="{{ getCampo('voltajeModulo').name }}" id="{{ getCampo('voltajeModulo').name }}" ng-model="getCampo('voltajeModulo').value" class="form-control" format tipo="decimal">
+      </div>
     </div>
-  </div>
 
-  <!-- Genera activa -->
-  <div class="col-lg-12">
-    <div class="form-group">
-      <label for="{{ getCampo('generaActiva').name }}">{{ getCampo('generaActiva').label }}</label>
-      <input type="text" name="{{ getCampo('generaActiva').name }}" id="{{ getCampo('generaActiva').name }}" ng-model="getCampo('generaActiva').value" class="form-control">
+    <!-- Genera activa -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampo('generaActiva').name }}">{{ getCampo('generaActiva').label }}</label>
+        <input type="text" name="{{ getCampo('generaActiva').name }}" id="{{ getCampo('generaActiva').name }}" ng-model="getCampo('generaActiva').value" class="form-control" format tipo="decimal">
+      </div>
     </div>
-  </div>
 
-  <!-- Genera reactiva -->
-  <div class="col-lg-12">
-    <div class="form-group">
-      <label for="{{ getCampo('generaReactiva').name }}">{{ getCampo('generaReactiva').label }}</label>
-      <input type="text" name="{{ getCampo('generaReactiva').name }}" id="{{ getCampo('generaReactiva').name }}" ng-model="getCampo('generaReactiva').value" class="form-control">
+    <!-- Genera reactiva -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampo('generaReactiva').name }}">{{ getCampo('generaReactiva').label }}</label>
+        <input type="text" name="{{ getCampo('generaReactiva').name }}" id="{{ getCampo('generaReactiva').name }}" ng-model="getCampo('generaReactiva').value" class="form-control" format tipo="decimal">
+      </div>
     </div>
   </div>
 </div>
 
 <!-- Generador PV -->
 <div ng-if="elementoSeleccionado.NAME == 'GeneradorPV'">
-  <!-- Mod. Voltaje -->
-  <div class="col-lg-12">
-    <div class="form-group">
-      <label for="{{ getCampo('voltajeModulo').name }}">{{ getCampo('voltajeModulo').label }}</label>
-      <input type="text" name="{{ getCampo('voltajeModulo').name }}" id="{{ getCampo('voltajeModulo').name }}" ng-model="getCampo('voltajeModulo').value" class="form-control">
+  <div class="row">
+    <!-- Mod. Voltaje -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampo('voltajeModulo').name }}">{{ getCampo('voltajeModulo').label }}</label>
+        <input type="text" name="{{ getCampo('voltajeModulo').name }}" id="{{ getCampo('voltajeModulo').name }}" ng-model="getCampo('voltajeModulo').value" class="form-control" format tipo="decimal">
+      </div>
     </div>
-  </div>
 
-  <!-- Genera activa -->
-  <div class="col-lg-12">
-    <div class="form-group">
-      <label for="{{ getCampo('generaActiva').name }}">{{ getCampo('generaActiva').label }}</label>
-      <input type="text" name="{{ getCampo('generaActiva').name }}" id="{{ getCampo('generaActiva').name }}" ng-model="getCampo('generaActiva').value" class="form-control">
+    <!-- Genera activa -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampo('generaActiva').name }}">{{ getCampo('generaActiva').label }}</label>
+        <input type="text" name="{{ getCampo('generaActiva').name }}" id="{{ getCampo('generaActiva').name }}" ng-model="getCampo('generaActiva').value" class="form-control" format tipo="decimal">
+      </div>
     </div>
-  </div>
 
-  <!-- Mín. reactiva -->
-  <div class="col-lg-12">
-    <div class="form-group">
-      <label for="{{ getCampo('minimaReactiva').name }}">{{ getCampo('minimaReactiva').label }}</label>
-      <input type="text" name="{{ getCampo('minimaReactiva').name }}" id="{{ getCampo('minimaReactiva').name }}" ng-model="getCampo('minimaReactiva').value" class="form-control">
+    <!-- Mín. reactiva -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampo('minimaReactiva').name }}">{{ getCampo('minimaReactiva').label }}</label>
+        <input type="text" name="{{ getCampo('minimaReactiva').name }}" id="{{ getCampo('minimaReactiva').name }}" ng-model="getCampo('minimaReactiva').value" class="form-control" format tipo="decimal">
+      </div>
     </div>
-  </div>
 
-  <!-- Max. reactiva -->
-  <div class="col-lg-12">
-    <div class="form-group">
-      <label for="{{ getCampo('maximaReactiva').name }}">{{ getCampo('maximaReactiva').label }}</label>
-      <input type="text" name="{{ getCampo('maximaReactiva').name }}" id="{{ getCampo('maximaReactiva').name }}" ng-model="getCampo('maximaReactiva').value" class="form-control">
+    <!-- Max. reactiva -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampo('maximaReactiva').name }}">{{ getCampo('maximaReactiva').label }}</label>
+        <input type="text" name="{{ getCampo('maximaReactiva').name }}" id="{{ getCampo('maximaReactiva').name }}" ng-model="getCampo('maximaReactiva').value" class="form-control" format tipo="decimal">
+      </div>
     </div>
   </div>
 </div>
 
 <!-- Transformador 2D -->
 <div ng-if="elementoSeleccionado.NAME == 'Transformador2D'">
-  <!-- Potencia aparente -->
-  <div class="col-lg-12">
-    <div class="form-group">
-      <label for="{{ getCampo('potenciaAparente').name }}">{{ getCampo('potenciaAparente').label }}</label>
-      <input type="text" name="{{ getCampo('potenciaAparente').name }}" id="{{ getCampo('potenciaAparente').name }}" ng-model="getCampo('potenciaAparente').value" class="form-control">
+  <div class="row">
+    <!-- Potencia aparente -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampo('potenciaAparente').name }}">{{ getCampo('potenciaAparente').label }}</label>
+        <input type="text" name="{{ getCampo('potenciaAparente').name }}" id="{{ getCampo('potenciaAparente').name }}" ng-model="getCampo('potenciaAparente').value" class="form-control" format tipo="decimal">
+      </div>
     </div>
-  </div>
 
-  <!-- Voltaje primario -->
-  <div class="col-lg-12">
-    <div class="form-group">
-      <label for="{{ getCampo('voltajePrimario').name }}">{{ getCampo('voltajePrimario').label }}</label>
-      <input type="text" name="{{ getCampo('voltajePrimario').name }}" id="{{ getCampo('voltajePrimario').name }}" ng-model="getCampo('voltajePrimario').value" class="form-control">
+    <!-- Voltaje primario -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampo('voltajePrimario').name }}">{{ getCampo('voltajePrimario').label }}</label>
+        <input type="text" name="{{ getCampo('voltajePrimario').name }}" id="{{ getCampo('voltajePrimario').name }}" ng-model="getCampo('voltajePrimario').value" class="form-control" format tipo="decimal">
+      </div>
     </div>
-  </div>
 
-  <!-- Voltaje secundario -->
-  <div class="col-lg-12">
-    <div class="form-group">
-      <label for="{{ getCampo('voltajeSecundario').name }}">{{ getCampo('voltajeSecundario').label }}</label>
-      <input type="text" name="{{ getCampo('voltajeSecundario').name }}" id="{{ getCampo('voltajeSecundario').name }}" ng-model="getCampo('voltajeSecundario').value" class="form-control">
+    <!-- Voltaje secundario -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampo('voltajeSecundario').name }}">{{ getCampo('voltajeSecundario').label }}</label>
+        <input type="text" name="{{ getCampo('voltajeSecundario').name }}" id="{{ getCampo('voltajeSecundario').name }}" ng-model="getCampo('voltajeSecundario').value" class="form-control" format tipo="decimal">
+      </div>
     </div>
-  </div>
 
-  <!-- Tensión cc -->
-  <div class="col-lg-12">
-    <div class="form-group">
-      <label for="{{ getCampo('tensionCortoCircuito').name }}">{{ getCampo('tensionCortoCircuito').label }}</label>
-      <input type="text" name="{{ getCampo('tensionCortoCircuito').name }}" id="{{ getCampo('tensionCortoCircuito').name }}" ng-model="getCampo('tensionCortoCircuito').value" class="form-control">
+    <!-- Tensión cc -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampo('tensionCortoCircuito').name }}">{{ getCampo('tensionCortoCircuito').label }}</label>
+        <input type="text" name="{{ getCampo('tensionCortoCircuito').name }}" id="{{ getCampo('tensionCortoCircuito').name }}" ng-model="getCampo('tensionCortoCircuito').value" class="form-control" format tipo="decimal">
+      </div>
     </div>
-  </div>
 
-  <!-- Grupo conexión -->
-  <div class="col-lg-12">
-    <div class="form-group">
-      <label for="{{ getCampo('grupoConexion').name }}">{{ getCampo('grupoConexion').label }}</label>
-      <select class="form-control" name="{{ getCampo('grupoConexion').name }}" id="{{ getCampo('grupoConexion').name }}" ng-model="getCampo('grupoConexion').value" ng-options="opcion.value as opcion.text for opcion in getCampo('grupoConexion').opciones"></select>
+    <!-- Grupo conexión -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampo('grupoConexion').name }}">{{ getCampo('grupoConexion').label }}</label>
+        <select class="form-control" name="{{ getCampo('grupoConexion').name }}" id="{{ getCampo('grupoConexion').name }}" ng-model="getCampo('grupoConexion').value" ng-options="opcion.value as opcion.text for opcion in getCampo('grupoConexion').opciones"></select>
+      </div>
     </div>
   </div>
 </div>
 
 <!-- Transformador 3D -->
 <div ng-if="elementoSeleccionado.NAME == 'Transformador3D'">
-  <!-- Grupo conexión -->
-  <div class="col-lg-12">
-    <div class="form-group">
-      <label for="{{ getCampo('grupoConexion').name }}">{{ getCampo('grupoConexion').label }}</label>
-      <select class="form-control" name="{{ getCampo('grupoConexion').name }}" id="{{ getCampo('grupoConexion').name }}" ng-model="getCampo('grupoConexion').value" ng-options="opcion.value as opcion.text for opcion in getCampo('grupoConexion').opciones"></select>
+  <div class="row">
+    <!-- I-J -->
+    <div class="col-lg-12">
+      <h4>{{ getCampoGrupo('i-j', 'titulo') }}</h4>
+    </div>
+
+    <!-- Potencia aparente -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampoGrupo('i-j', 'potenciaAparente').name }}">{{ getCampoGrupo('i-j', 'potenciaAparente').label }}</label>
+        <input type="text" name="{{ getCampoGrupo('i-j', 'potenciaAparente').name }}" id="{{ getCampoGrupo('i-j', 'potenciaAparente').name }}" ng-model="getCampoGrupo('i-j', 'potenciaAparente').value" class="form-control" format tipo="decimal">
+      </div>
+    </div>
+
+    <!-- Tensión cc -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampoGrupo('i-j', 'tensionCortoCircuito').name }}">{{ getCampoGrupo('i-j', 'tensionCortoCircuito').label }}</label>
+        <input type="text" name="{{ getCampoGrupo('i-j', 'tensionCortoCircuito').name }}" id="{{ getCampoGrupo('i-j', 'tensionCortoCircuito').name }}" ng-model="getCampoGrupo('i-j', 'tensionCortoCircuito').value" class="form-control" format tipo="decimal">
+      </div>
+    </div>
+
+    <!-- I-K -->
+    <div class="col-lg-12">
+      <h4>{{ getCampoGrupo('i-k', 'titulo') }}</h4>
+    </div>
+
+    <!-- Potencia aparente -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampoGrupo('i-k', 'potenciaAparente').name }}">{{ getCampoGrupo('i-k', 'potenciaAparente').label }}</label>
+        <input type="text" name="{{ getCampoGrupo('i-k', 'potenciaAparente').name }}" id="{{ getCampoGrupo('i-k', 'potenciaAparente').name }}" ng-model="getCampoGrupo('i-k', 'potenciaAparente').value" class="form-control" format tipo="decimal">
+      </div>
+    </div>
+
+    <!-- Tensión cc -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampoGrupo('i-k', 'tensionCortoCircuito').name }}">{{ getCampoGrupo('i-k', 'tensionCortoCircuito').label }}</label>
+        <input type="text" name="{{ getCampoGrupo('i-k', 'tensionCortoCircuito').name }}" id="{{ getCampoGrupo('i-k', 'tensionCortoCircuito').name }}" ng-model="getCampoGrupo('i-k', 'tensionCortoCircuito').value" class="form-control" format tipo="decimal">
+      </div>
+    </div>
+
+    <!-- J-K -->
+    <div class="col-lg-12">
+      <h4>{{ getCampoGrupo('j-k', 'titulo') }}</h4>
+    </div>
+
+    <!-- Potencia aparente -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampoGrupo('j-k', 'potenciaAparente').name }}">{{ getCampoGrupo('j-k', 'potenciaAparente').label }}</label>
+        <input type="text" name="{{ getCampoGrupo('j-k', 'potenciaAparente').name }}" id="{{ getCampoGrupo('j-k', 'potenciaAparente').name }}" ng-model="getCampoGrupo('j-k', 'potenciaAparente').value" class="form-control" format tipo="decimal">
+      </div>
+    </div>
+
+    <!-- Tensión cc -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampoGrupo('j-k', 'tensionCortoCircuito').name }}">{{ getCampoGrupo('j-k', 'tensionCortoCircuito').label }}</label>
+        <input type="text" name="{{ getCampoGrupo('j-k', 'tensionCortoCircuito').name }}" id="{{ getCampoGrupo('j-k', 'tensionCortoCircuito').name }}" ng-model="getCampoGrupo('j-k', 'tensionCortoCircuito').value" class="form-control" format tipo="decimal">
+      </div>
+    </div>
+
+    <!-- Título -->
+    <div class="col-lg-12">
+      <h4>{{ getCampo('titulo') }}</h4>
+    </div>
+
+    <!-- Grupo conexión -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampo('grupoConexion').name }}">{{ getCampo('grupoConexion').label }}</label>
+        <select class="form-control" name="{{ getCampo('grupoConexion').name }}" id="{{ getCampo('grupoConexion').name }}" ng-model="getCampo('grupoConexion').value" ng-options="opcion.value as opcion.text for opcion in getCampo('grupoConexion').opciones"></select>
+      </div>
+    </div>
+
+    <!-- Voltaje prim -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampo('voltajePrimario').name }}">{{ getCampo('voltajePrimario').label }}</label>
+        <input type="text" name="{{ getCampo('voltajePrimario').name }}" id="{{ getCampo('voltajePrimario').name }}" ng-model="getCampo('voltajePrimario').value" class="form-control" format tipo="decimal">
+      </div>
+    </div>
+
+    <!-- Voltaje sec -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampo('voltajeSecundario').name }}">{{ getCampo('voltajeSecundario').label }}</label>
+        <input type="text" name="{{ getCampo('voltajeSecundario').name }}" id="{{ getCampo('voltajeSecundario').name }}" ng-model="getCampo('voltajeSecundario').value" class="form-control" format tipo="decimal">
+      </div>
     </div>
   </div>
 
-  <!-- Voltaje prim -->
-  <div class="col-lg-12">
-    <div class="form-group">
-      <label for="{{ getCampo('voltajePrimario').name }}">{{ getCampo('voltajePrimario').label }}</label>
-      <input type="text" name="{{ getCampo('voltajePrimario').name }}" id="{{ getCampo('voltajePrimario').name }}" ng-model="getCampo('voltajePrimario').value" class="form-control">
-    </div>
-  </div>
-
-  <!-- Voltaje sec -->
-  <div class="col-lg-12">
-    <div class="form-group">
-      <label for="{{ getCampo('voltajeSecundario').name }}">{{ getCampo('voltajeSecundario').label }}</label>
-      <input type="text" name="{{ getCampo('voltajeSecundario').name }}" id="{{ getCampo('voltajeSecundario').name }}" ng-model="getCampo('voltajeSecundario').value" class="form-control">
-    </div>
-  </div>
 </div>
 
 <!-- Carga -->
 <div ng-if="elementoSeleccionado.NAME == 'Carga'">
-  <!-- Carga activa -->
-  <div class="col-lg-12">
-    <div class="form-group">
-      <label for="{{ getCampo('cargaActiva').name }}">{{ getCampo('cargaActiva').label }}</label>
-      <input type="text" name="{{ getCampo('cargaActiva').name }}" id="{{ getCampo('cargaActiva').name }}" ng-model="getCampo('cargaActiva').value" class="form-control">
+  <div class="row">
+    <!-- Carga activa -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampo('cargaActiva').name }}">{{ getCampo('cargaActiva').label }}</label>
+        <input type="text" name="{{ getCampo('cargaActiva').name }}" id="{{ getCampo('cargaActiva').name }}" ng-model="getCampo('cargaActiva').value" class="form-control" format tipo="decimal">
+      </div>
     </div>
-  </div>
 
-  <!-- Carga reactiva -->
-  <div class="col-lg-12">
-    <div class="form-group">
-      <label for="{{ getCampo('cargaReactiva').name }}">{{ getCampo('cargaReactiva').label }}</label>
-      <input type="text" name="{{ getCampo('cargaReactiva').name }}" id="{{ getCampo('cargaReactiva').name }}" ng-model="getCampo('cargaReactiva').value" class="form-control">
+    <!-- Carga reactiva -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampo('cargaReactiva').name }}">{{ getCampo('cargaReactiva').label }}</label>
+        <input type="text" name="{{ getCampo('cargaReactiva').name }}" id="{{ getCampo('cargaReactiva').name }}" ng-model="getCampo('cargaReactiva').value" class="form-control" format tipo="decimal">
+      </div>
     </div>
   </div>
 </div>

@@ -78,6 +78,17 @@ function FiguresSrvc(MixinSrvc) {
     my.canvasDiagrama.add(elemento, x, y);
     my.canvasDiagrama.setCurrentSelection(elemento);
     MixinSrvc.setElmSeleccionado(elemento);
+
+    if (name == 'Barra') {
+      indexarBarras();
+    };
+  }
+
+  indexarBarras = function() {
+    for (var i = 0; i < my.canvasDiagrama.figures.data.length; i++) {
+      var figura = my.canvasDiagrama.figures.data[i];
+      figura.userData.indexI = i + 1;
+    };
   }
 
   my.visibilidadPuertos = function(value) {
