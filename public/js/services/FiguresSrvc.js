@@ -1,7 +1,41 @@
 function FiguresSrvc(MixinSrvc) {
   var my = {};
+  var hiddenMy = {};
 
   my.canvasDiagrama = new draw2d.Canvas('canvas-diagrama');
+
+  draw2d.Connection.createConnection = function(sourcePort, targetPort) {
+    switch (my.tipoConexion()) {
+      case 'conexion':
+        var conexion = new Conexion();
+        MixinSrvc.setElmSeleccionado(null);
+        return conexion;
+        break;
+
+      case 'linea':
+        var linea = new Linea();
+        MixinSrvc.setElmSeleccionado(linea);
+        return linea;
+        break;
+    }
+  };
+
+  hiddenMy.tipoConexion = '';
+
+  my.tipoConexion = function(tipo) {
+    if (typeof tipo === 'undefined') {
+      return hiddenMy.tipoConexion;
+    } else {
+      hiddenMy.tipoConexion = tipo;
+
+      switch (tipo) {
+        case 'conexion':
+          break;
+        case 'linea':
+          break;
+      }
+    }
+  }
 
   // Elementos para el diagrama
   function crearElemento(key) {
@@ -82,6 +116,10 @@ function FiguresSrvc(MixinSrvc) {
     if (name == 'Barra') {
       indexarBarras();
     };
+
+    for (var i = 0; i < elemento.getPorts().data.length; i++) {
+      elemento.getPorts().data[i].setVisible(my.visibilidadPuertos());
+    };
   }
 
   indexarBarras = function() {
@@ -91,12 +129,20 @@ function FiguresSrvc(MixinSrvc) {
     };
   }
 
+  hiddenMy.visibilidadPuertos = false;
   my.visibilidadPuertos = function(value) {
-    var ports = my.canvasDiagrama.getAllPorts().data;
+    if (typeof value === 'undefined') {
+      return hiddenMy.visibilidadPuertos;
 
-    for (var i = 0; i < ports.length; i++) {
-      var port = ports[i];
-      port.setVisible(value);
+    } else {
+      var ports = my.canvasDiagrama.getAllPorts().data;
+
+      for (var i = 0; i < ports.length; i++) {
+        var port = ports[i];
+        port.setVisible(value);
+      };
+
+      hiddenMy.visibilidadPuertos = value;
     };
   }
 

@@ -6,7 +6,7 @@ setTimeout(function() {
   var injector = elem.injector();
 
   MixinSrvc = injector.get('MixinSrvc');
-}, 10);
+}, 100);
 
 ////////////////////////////////////
 // ----------PLANTILLAS---------- //
@@ -42,6 +42,55 @@ Figure = draw2d.SVGFigure.extend({
 ///////////////////////////////////
 // ----------ELEMENTOS---------- //
 ///////////////////////////////////
+Conexion = draw2d.Connection.extend({
+  NAME: 'Conexion',
+  init: function() {
+    this._super();
+    this.setStroke(3);
+    this.setRadius(0);
+    this.setColor('#66AB16');
+    this.setRouter(new draw2d.layout.connection.ManhattanConnectionRouter());
+  },
+});
+
+Linea = draw2d.Connection.extend({
+  NAME: 'Linea',
+  init: function() {
+    this._super();
+    this.setStroke(3);
+    this.setRadius(0);
+    this.setColor('#D14836');
+    this.setRouter(new draw2d.layout.connection.ManhattanConnectionRouter());
+
+    this.userData = {
+      admitanciaCapacitiva: {
+        name: 'admitanciaCapacitiva',
+        label: 'Admitancia capacitiva',
+        value: '',
+      },
+      longitud: {
+        name: 'longitud',
+        label: 'Longitud',
+        value: '',
+      },
+      resistencia: {
+        name: 'resistencia',
+        label: 'Resistencia',
+        value: '',
+      },
+      reactancia: {
+        name: 'reactancia',
+        label: 'Reactancia',
+        value: '',
+      },
+    };
+  },
+  onClick: function() {
+    this._super();
+    MixinSrvc.setElmSeleccionado(this);
+  },
+});
+
 Barra = Figure.extend({
   NAME: 'Barra',
   init: function(paleta) {

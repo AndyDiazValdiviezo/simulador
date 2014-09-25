@@ -256,3 +256,40 @@
     </div>
   </div>
 </div>
+
+<!-- Linea -->
+<div ng-if="elementoSeleccionado.NAME == 'Linea'">
+  <div class="row">
+    <!-- Admitancia capacitiva -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampo('admitanciaCapacitiva').name }}">{{ getCampo('admitanciaCapacitiva').label }}</label>
+        <input type="text" name="{{ getCampo('admitanciaCapacitiva').name }}" id="{{ getCampo('admitanciaCapacitiva').name }}" ng-model="getCampo('admitanciaCapacitiva').value" class="form-control" format tipo="decimal">
+      </div>
+    </div>
+
+    <!-- Longitud -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampo('longitud').name }}">{{ getCampo('longitud').label }}</label>
+        <input type="text" name="{{ getCampo('longitud').name }}" id="{{ getCampo('longitud').name }}" ng-model="getCampo('longitud').value" class="form-control" format tipo="decimal">
+      </div>
+    </div>
+
+    <!-- Resistencia -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampo('resistencia').name }}">{{ getCampo('resistencia').label }}</label>
+        <input type="text" name="{{ getCampo('resistencia').name }}" id="{{ getCampo('resistencia').name }}" ng-model="getCampo('resistencia').value" class="form-control" format tipo="decimal">
+      </div>
+    </div>
+
+    <!-- Reactancia -->
+    <div class="col-lg-12">
+      <div class="form-group">
+        <label for="{{ getCampo('reactancia').name }}">{{ getCampo('reactancia').label }}</label>
+        <input type="text" name="{{ getCampo('reactancia').name }}" id="{{ getCampo('reactancia').name }}" ng-model="getCampo('reactancia').value" class="form-control" format tipo="decimal">
+      </div>
+    </div>
+  </div>
+</div>

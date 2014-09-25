@@ -52,45 +52,52 @@
       });
     }
 
-    $scope.puertosActivos = false;
-    $scope.tipoConexion = '';
+    $scope.tipoConexion = function(tipo) {
+      if (typeof tipo === 'undefined') {
+        return FiguresSrvc.tipoConexion();
+      } else {
+        FiguresSrvc.tipoConexion(tipo);
+      };
+    }
+
+    $scope.visibilidadPuertos =function(value) {
+      if (typeof value === 'undefined') {
+        return FiguresSrvc.visibilidadPuertos();
+      } else{
+        FiguresSrvc.visibilidadPuertos(value);
+      };
+    }
 
     $scope.conexion = function() {
-      if ($scope.tipoConexion == 'conexion') {
-        if ($scope.puertosActivos) {
-          FiguresSrvc.visibilidadPuertos(false);
-          $scope.puertosActivos = false;
+      if ($scope.tipoConexion() == 'conexion') {
+        if ($scope.visibilidadPuertos()) {
+          $scope.visibilidadPuertos(false);
         } else {
-          FiguresSrvc.visibilidadPuertos(true);
-          $scope.puertosActivos = true;
+          $scope.visibilidadPuertos(true);
         };
-      } else {
-        $scope.tipoConexion = 'conexion';
-        global.tipoConexion = $scope.tipoConexion;
 
-        if ($scope.puertosActivos) {} else {
-          FiguresSrvc.visibilidadPuertos(true);
-          $scope.puertosActivos = true;
+      } else {
+        $scope.tipoConexion('conexion');
+
+        if ($scope.visibilidadPuertos()) {} else {
+          $scope.visibilidadPuertos(true);
         };
       };
     }
 
     $scope.linea = function() {
-      if ($scope.tipoConexion == 'linea') {
-        if ($scope.puertosActivos) {
-          FiguresSrvc.visibilidadPuertos(false);
-          $scope.puertosActivos = false;
+      if ($scope.tipoConexion() == 'linea') {
+        if ($scope.visibilidadPuertos()) {
+          $scope.visibilidadPuertos(false);
         } else {
-          FiguresSrvc.visibilidadPuertos(true);
-          $scope.puertosActivos = true;
+          $scope.visibilidadPuertos(true);
         };
-      } else {
-        $scope.tipoConexion = 'linea';
-        global.tipoConexion = $scope.tipoConexion;
 
-        if ($scope.puertosActivos) {} else {
-          FiguresSrvc.visibilidadPuertos(true);
-          $scope.puertosActivos = true;
+      } else {
+        $scope.tipoConexion('linea');
+
+        if ($scope.visibilidadPuertos()) {} else {
+          $scope.visibilidadPuertos(true);
         };
       };
     }
