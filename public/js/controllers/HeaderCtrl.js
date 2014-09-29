@@ -1,5 +1,5 @@
 (function() {
-  function HeaderCtrl($scope, $modal, FiguresSrvc, StorageSrvc) {
+  function HeaderCtrl($scope, $modal, FiguresSrvc, CalculosSrvc, StorageSrvc) {
     ///////////////////////////////
     // ----------DATOS---------- //
     ///////////////////////////////
@@ -60,10 +60,10 @@
       };
     }
 
-    $scope.visibilidadPuertos =function(value) {
+    $scope.visibilidadPuertos = function(value) {
       if (typeof value === 'undefined') {
         return FiguresSrvc.visibilidadPuertos();
-      } else{
+      } else {
         FiguresSrvc.visibilidadPuertos(value);
       };
     }
@@ -100,6 +100,23 @@
           $scope.visibilidadPuertos(true);
         };
       };
+    }
+
+    $scope.calcular = function() {
+      var aElementos = [];
+
+      for (var i = 0; i < $scope.canvasDiagrama().figures.data.length; i++) {
+        aElementos.push($scope.canvasDiagrama().figures.data[i].userData);
+      };
+      for (var i = 0; i < $scope.canvasDiagrama().lines.data.length; i++) {
+        var line = $scope.canvasDiagrama().lines.data[i];
+
+        if (line.NAME == 'Linea') {
+          aElementos.push($scope.canvasDiagrama().lines.data[i].userData);
+        };
+      };
+
+      CalculosSrvc.calculoIterativo(FiguresSrvc.cantidadBarras(), aElementos);
     }
   }
 

@@ -38,7 +38,7 @@ PortBarra = HybridPortFigure.extend({
 
     var procede = true;
 
-    if (draggedFigure.NAME == '#ResizeHandle') {
+    if (!outFigure) {
       procede = false;
 
     } else {
@@ -64,20 +64,18 @@ PortBarra = HybridPortFigure.extend({
           var source = conexion.getSource().getParent();
           var target = conexion.getTarget().getParent();
 
-          if (source.NAME == 'Barra' && outFigure.NAME == 'Barra') {
+          if (source.NAME == outFigure.NAME) {
             procede = false;
-          } else {
-            if (source.NAME == outFigure.NAME) {
-              procede = false;
-            };
-          };
+          }
         };
       };
 
-      // Verifico si el elemento externo tiene ya está conectado
+      // Verifico si el elemento externo ya está conectado
       if (procede) {
-        if (outFigure.NAME != 'Barra' && outFigure.getConnections().data.length > 0) {
-          procede = false;
+        if (outFigure.NAME != 'Barra') {
+          if (draggedFigure.getConnections().data.length > 0) {
+            procede = false;
+          };
         };
       };
     };
@@ -88,7 +86,25 @@ PortBarra = HybridPortFigure.extend({
 
     return this;
   },
-  onConnect: function(connection) {},
+  onConnect: function(connection) {
+    var srcPort = connection.getSource();
+    var srcFigure = srcPort.getParent();
+    var thisFigure = this.getParent();
+
+    if (connection.NAME != 'Linea') {
+      srcFigure.userData['index' + srcPort.getLocator().indice] = thisFigure.userData.indexI;
+
+    } else {
+      if (thisFigure.id != srcFigure.id) {
+        var indexI = Math.min(thisFigure.userData.indexI, srcFigure.userData.indexI);
+        var indexJ = Math.max(thisFigure.userData.indexI, srcFigure.userData.indexI);
+
+        connection.userData.indexI = indexI;
+        connection.userData.indexJ = indexJ;
+      };
+    };
+  },
+  onDisconnect: function(connection) {},
 });
 
 PortGeneradorSW = OutputPortFigure.extend({
@@ -99,7 +115,7 @@ PortGeneradorSW = OutputPortFigure.extend({
 
     var procede = true;
 
-    if (draggedFigure.NAME == '#ResizeHandle') {
+    if (!outFigure) {
       procede = false;
 
     } else {
@@ -141,7 +157,7 @@ PortGeneradorPV = OutputPortFigure.extend({
 
     var procede = true;
 
-    if (draggedFigure.NAME == '#ResizeHandle') {
+    if (!outFigure) {
       procede = false;
 
     } else {
@@ -183,7 +199,7 @@ PortTransformador2D = OutputPortFigure.extend({
 
     var procede = true;
 
-    if (draggedFigure.NAME == '#ResizeHandle') {
+    if (!outFigure) {
       procede = false;
 
     } else {
@@ -234,7 +250,7 @@ PortTransformador3D = OutputPortFigure.extend({
 
     var procede = true;
 
-    if (draggedFigure.NAME == '#ResizeHandle') {
+    if (!outFigure) {
       procede = false;
 
     } else {
@@ -284,7 +300,7 @@ PortCarga = OutputPortFigure.extend({
 
     var procede = true;
 
-    if (draggedFigure.NAME == '#ResizeHandle') {
+    if (!outFigure) {
       procede = false;
 
     } else {

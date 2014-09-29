@@ -4,20 +4,21 @@ function FiguresSrvc(MixinSrvc) {
 
   my.canvasDiagrama = new draw2d.Canvas('canvas-diagrama');
 
-  draw2d.Connection.createConnection = function(sourcePort, targetPort) {
+
+  draw2d.Connection.createConnection = function(sourcePort, targetPort, callback, dropTarget) {
     switch (my.tipoConexion()) {
       case 'conexion':
-        var conexion = new Conexion();
+        var connection = new Conexion();
         MixinSrvc.setElmSeleccionado(null);
-        return conexion;
         break;
 
       case 'linea':
-        var linea = new Linea();
-        MixinSrvc.setElmSeleccionado(linea);
-        return linea;
+        var connection = new Linea();
+        MixinSrvc.setElmSeleccionado(connection);
         break;
     }
+
+    return connection;
   };
 
   hiddenMy.tipoConexion = '';
@@ -122,12 +123,32 @@ function FiguresSrvc(MixinSrvc) {
     };
   }
 
-  indexarBarras = function() {
+  var indexarBarras = function() {
+    var cnt = 0;
+
     for (var i = 0; i < my.canvasDiagrama.figures.data.length; i++) {
       var figura = my.canvasDiagrama.figures.data[i];
-      figura.userData.indexI = i + 1;
+
+      if (figura.NAME == 'Barra') {
+        cnt++;
+        figura.userData.indexI = cnt;
+      };
     };
   }
+
+  my.cantidadBarras = function() {
+    var cnt = 0;
+
+    for (var i = 0; i < my.canvasDiagrama.figures.data.length; i++) {
+      var figura = my.canvasDiagrama.figures.data[i];
+
+      if (figura.NAME == 'Barra') {
+        cnt++;
+      };
+    };
+
+    return cnt;
+  };
 
   hiddenMy.visibilidadPuertos = false;
   my.visibilidadPuertos = function(value) {

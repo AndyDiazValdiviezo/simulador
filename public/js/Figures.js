@@ -25,7 +25,17 @@ Figure = draw2d.SVGFigure.extend({
   },
   getPersistentAttributes: function() {
     var memento = this._super();
+
     memento.rotationAngle = this.rotationAngle;
+    memento.ports = [];
+
+    for (var i = 0; i < this.getPorts().data.length; i++) {
+      memento.ports.push({
+        name: this.getPorts().data[i].locator.NAME,
+        port: this.getPorts().data[i].NAME,
+        locator: this.getPorts().data[i].locator.NAME,
+      });
+    };
 
     return memento;
   },
@@ -50,6 +60,14 @@ Conexion = draw2d.Connection.extend({
     this.setRadius(0);
     this.setColor('#66AB16');
     this.setRouter(new draw2d.layout.connection.ManhattanConnectionRouter());
+  },
+  getPersistentAttributes: function() {
+    var memento = this._super();
+
+    memento.source.port = this.getSource().locator.NAME;
+    memento.target.port = this.getTarget().locator.NAME;
+
+    return memento;
   },
 });
 
@@ -89,6 +107,14 @@ Linea = draw2d.Connection.extend({
     this._super();
     MixinSrvc.setElmSeleccionado(this);
   },
+  getPersistentAttributes: function() {
+    var memento = this._super();
+
+    memento.source.port = this.getSource().locator.NAME;
+    memento.target.port = this.getTarget().locator.NAME;
+
+    return memento;
+  },
 });
 
 Barra = Figure.extend({
@@ -98,6 +124,7 @@ Barra = Figure.extend({
     this.addPort(new PortBarra(), new BarraHybridLocator());
 
     this.userData = {
+      type: this.NAME,
       voltaje: {
         name: 'Voltaje',
         label: 'Voltaje',
@@ -131,6 +158,7 @@ GeneradorSW = Figure.extend({
     this.addPort(new PortGeneradorSW(), new GeneradorSWOutputLocator());
 
     this.userData = {
+      type: this.NAME,
       voltajeModulo: {
         name: 'voltajeModulo',
         label: 'Mod. Voltaje',
@@ -165,6 +193,7 @@ GeneradorPV = Figure.extend({
     this.addPort(new PortGeneradorPV(), new GeneradorPVOutputLocator());
 
     this.userData = {
+      type: this.NAME,
       voltajeModulo: {
         name: 'voltajeModulo',
         label: 'Mod. Voltaje',
@@ -210,6 +239,7 @@ Transformador2D = Figure.extend({
     this.addPort(new PortTransformador2D(), new Transformador2DOutputLocator2());
 
     this.userData = {
+      type: this.NAME,
       admitanciaCapacitiva: {
         name: 'admitanciaCapacitiva',
         value: '',
@@ -324,6 +354,7 @@ Transformador3D = Figure.extend({
     this.addPort(new PortTransformador3D(), new Transformador3DOutputLocator3());
 
     this.userData = {
+      type: this.NAME,
       'i-j': {
         titulo: 'Datos I-J',
         potenciaAparente: {
@@ -404,6 +435,7 @@ Carga = Figure.extend({
     this.addPort(new PortCarga(), new CargaOutputLocator());
 
     this.userData = {
+      type: this.NAME,
       cargaActiva: {
         name: 'cargaActiva',
         label: 'Carga activa',

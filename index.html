@@ -21,6 +21,7 @@
         <div class="btn btn-danger" ng-click="guardar()">Guardar</div>
         <div class="btn btn-default" ng-click="conexion()">Conexión</div>
         <div class="btn btn-default" ng-click="linea()">Línea</div>
+        <div class="btn btn-danger pull-right" ng-click="calcular()">Calcular</div>
         <input type="file" fileread="file">
       </div>
     </div>
@@ -76,6 +77,9 @@
   <!-- Scripts - Math JS -->
   <script src="public/third-party/math-js/math.min.js"></script>
 
+  <!-- Scripts - Otros -->
+  <script src="public/js/helpers.js"></script>
+
   <!-- Scripts - Lógica -->
   <script src="public/js/Globales.js"></script>
   <script src="public/js/Locators.js"></script>
@@ -86,6 +90,7 @@
   <!-- Servicios -->
   <script src="public/js/services/DefaultSrvc.js"></script>
   <script src="public/js/services/FiguresSrvc.js"></script>
+  <script src="public/js/services/CalculosSrvc.js"></script>
   <script src="public/js/services/StorageSrvc.js"></script>
   <script src="public/js/services/MixinSrvc.js"></script>
   <!-- Controladores -->

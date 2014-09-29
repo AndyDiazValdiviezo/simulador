@@ -7,6 +7,7 @@ BarraHybridLocator = draw2d.layout.locator.InputPortLocator.extend({
   NAME: 'BarraHybridLocator',
   init: function() {
     this._super();
+    this.indice = 'I';
   },
   relocate: function(index, figure) {
     var width = figure.getParent().getWidth();
@@ -47,6 +48,7 @@ GeneradorSWOutputLocator = draw2d.layout.locator.OutputPortLocator.extend({
   NAME: 'GeneradorSWOutputLocator',
   init: function() {
     this._super();
+    this.indice = 'I';
   },
   relocate: function(index, figure) {
     var width = figure.getParent().getWidth();
@@ -87,6 +89,7 @@ GeneradorPVOutputLocator = draw2d.layout.locator.OutputPortLocator.extend({
   NAME: 'GeneradorPVOutputLocator',
   init: function() {
     this._super();
+    this.indice = 'I';
   },
   relocate: function(index, figure) {
     var width = figure.getParent().getWidth();
@@ -127,6 +130,7 @@ Transformador2DOutputLocator1 = draw2d.layout.locator.OutputPortLocator.extend({
   NAME: 'Transformador2DOutputLocator1',
   init: function() {
     this._super();
+    this.indice = 'I';
   },
   relocate: function(index, figure) {
     var width = figure.getParent().getWidth();
@@ -165,6 +169,7 @@ Transformador2DOutputLocator2 = draw2d.layout.locator.OutputPortLocator.extend({
   NAME: 'Transformador2DOutputLocator2',
   init: function() {
     this._super();
+    this.indice = 'J';
   },
   relocate: function(index, figure) {
     var width = figure.getParent().getWidth();
@@ -205,6 +210,7 @@ Transformador3DOutputLocator1 = draw2d.layout.locator.OutputPortLocator.extend({
   NAME: 'Transformador3DOutputLocator1',
   init: function() {
     this._super();
+    this.indice = 'I';
   },
   relocate: function(index, figure) {
     var width = figure.getParent().getWidth();
@@ -243,6 +249,7 @@ Transformador3DOutputLocator2 = draw2d.layout.locator.OutputPortLocator.extend({
   NAME: 'Transformador3DOutputLocator2',
   init: function() {
     this._super();
+    this.indice = 'J';
   },
   relocate: function(index, figure) {
     var width = figure.getParent().getWidth();
@@ -281,6 +288,7 @@ Transformador3DOutputLocator3 = draw2d.layout.locator.OutputPortLocator.extend({
   NAME: 'Transformador3DOutputLocator3',
   init: function() {
     this._super();
+    this.indice = 'K';
   },
   relocate: function(index, figure) {
     var width = figure.getParent().getWidth();
@@ -321,6 +329,7 @@ CargaOutputLocator = draw2d.layout.locator.OutputPortLocator.extend({
   NAME: 'CargaOutputLocator',
   init: function() {
     this._super();
+    this.indice = 'I';
   },
   relocate: function(index, figure) {
     var width = figure.getParent().getWidth();
