@@ -81,6 +81,7 @@ Linea = draw2d.Connection.extend({
     this.setRouter(new draw2d.layout.connection.ManhattanConnectionRouter());
 
     this.userData = {
+      type: this.NAME,
       admitanciaCapacitiva: {
         name: 'admitanciaCapacitiva',
         label: 'Admitancia capacitiva',
@@ -102,6 +103,19 @@ Linea = draw2d.Connection.extend({
         value: '',
       },
     };
+  },
+  getAdmCpcCalculada: function(admitUsuario, voltaje) {
+    var modulo = math.multiply(
+      admitUsuario,
+      math.divide(math.pow(voltaje, 2), 100)
+    );
+    var angulo = math.multiply(90, math.divide(math.pi, 180));
+    var admitCalculada = math.complex({
+      r: modulo,
+      phi: angulo
+    });
+
+    return admitCalculada;
   },
   onClick: function() {
     this._super();
@@ -338,6 +352,13 @@ Transformador2D = Figure.extend({
           'valueFaseTrafo': 30,
         }, ],
       },
+    };
+  },
+  getVlrFaseTrafo: function(opciones, nombre) {
+    for (var i = 0; i < opciones.length; i++) {
+      if (opciones[i].value === nombre) {
+        return opciones[i].valueFaseTrafo;
+      };
     };
   },
   getSVG: function() {

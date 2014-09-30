@@ -25,11 +25,6 @@
         };
       }
     }
-
-    $scope.setCampoCalculado = function(campo) {
-      console.log(campo);
-      console.log(this);
-    }
   }
 
   angular

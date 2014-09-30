@@ -116,8 +116,24 @@
         };
       };
 
-      CalculosSrvc.calculoIterativo(FiguresSrvc.cantidadBarras(), aElementos);
+      var resultaados = CalculosSrvc.calculoIterativo(FiguresSrvc.cantidadBarras(), aElementos);
+      $scope.mostrarResultados(resultaados);
     }
+
+    $scope.mostrarResultados = function(resultaados) {
+      var modalInstance = $modal.open({
+        templateUrl: 'templates/consola.html',
+        controller: 'ResultadosCtrl',
+        size: 'md',
+        resolve: {},
+      });
+
+      modalInstance.result.then(function() {
+        console.log('entrada');
+      }, function() {
+        console.log('salida');
+      });
+    };
   }
 
   angular

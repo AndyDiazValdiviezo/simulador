@@ -159,7 +159,7 @@ function CalculosSrvc() {
           if (elemento) {
             if (elemento.type == 'Linea') {
               var admitUsuario = math.number(elemento.admitanciaCapacitiva.value);
-              var admitCapacitiva = math.number(elemento.admitanciaCapacitivaCalculada.value);
+              var admitCapacitiva = Linea.prototype.getAdmCpcCalculada(admitUsuario, voltaje);
 
               var sumatoria = math.sum(
                 aAdmitancias.subset(math.index(i, i)),
@@ -221,13 +221,13 @@ function CalculosSrvc() {
 
       switch (tipo) {
         case 'SW':
-          var generadorSW = getElementoPorIndiceTipo(math.add(i, 1), 'generadorSW', aElementos);
+          var generadorSW = getElementoPorIndiceTipo(math.add(i, 1), 'GeneradorSW', aElementos);
           var generaActiva = math.number(generadorSW.generaActiva.value);
           aGeneracionActiva.subset(math.index(i), generaActiva);
           break;
 
         case 'PV':
-          var generadorPV = getElementoPorIndiceTipo(math.add(i, 1), 'generadorPV', aElementos);
+          var generadorPV = getElementoPorIndiceTipo(math.add(i, 1), 'GeneradorPV', aElementos);
           var generaActiva = math.number(generadorPV.generaActiva.value);
           aGeneracionActiva.subset(math.index(i), generaActiva);
           break;
@@ -246,13 +246,13 @@ function CalculosSrvc() {
 
       switch (tipo) {
         case 'SW':
-          var generadorSW = getElementoPorIndiceTipo(math.add(i, 1), 'generadorSW', aElementos);
+          var generadorSW = getElementoPorIndiceTipo(math.add(i, 1), 'GeneradorSW', aElementos);
           var generaReactiva = math.number(generadorSW.generaReactiva.value);
           aGeneracionReactiva.subset(math.index(i), generaReactiva);
           break;
 
         case 'PV':
-          var generadorPV = getElementoPorIndiceTipo(math.add(i, 1), 'generadorPV', aElementos);
+          var generadorPV = getElementoPorIndiceTipo(math.add(i, 1), 'GeneradorPV', aElementos);
           var generaReactiva = math.number(generadorPV.generaReactiva.value);
           aGeneracionReactiva.subset(math.index(i), generaReactiva);
           break;
@@ -338,7 +338,7 @@ function CalculosSrvc() {
       var tipo = barra.tipo.value;
 
       if (tipo == 'PV') {
-        var generadorPV = getElementoPorIndiceTipo(math.add(i, 1), 'generadorPV', aElementos);
+        var generadorPV = getElementoPorIndiceTipo(math.add(i, 1), 'GeneradorPV', aElementos);
         var minimaReactiva = math.number(generadorPV.minimaReactiva.value);
         aMinimaReactiva.subset(math.index(i), minimaReactiva);
       };
@@ -355,7 +355,7 @@ function CalculosSrvc() {
       var tipo = barra.tipo.value;
 
       if (tipo == 'PV') {
-        var generadorPV = getElementoPorIndiceTipo(math.add(i, 1), 'generadorPV', aElementos);
+        var generadorPV = getElementoPorIndiceTipo(math.add(i, 1), 'GeneradorPV', aElementos);
         var maximaReactiva = math.number(generadorPV.maximaReactiva.value);
         aMaximaReactiva.subset(math.index(i), maximaReactiva);
       };
@@ -374,14 +374,14 @@ function CalculosSrvc() {
 
       switch (tipo) {
         case 'SW':
-          var generador = getElementoPorIndiceTipo(math.add(i, 1), 'generadorSW', aElementos);
+          var generador = getElementoPorIndiceTipo(math.add(i, 1), 'GeneradorSW', aElementos);
           var voltaje = math.complex(math.number(generador.voltajeModulo.value), 0);
           var voltajeBarra = math.number(barra.voltaje.value);
           aVoltajesOperativos.subset(math.index(i), math.divide(voltaje, voltajeBarra));
           break;
 
         case 'PV':
-          var generador = getElementoPorIndiceTipo(math.add(i, 1), 'generadorPV', aElementos);
+          var generador = getElementoPorIndiceTipo(math.add(i, 1), 'GeneradorPV', aElementos);
           var voltaje = math.complex(math.number(generador.voltajeModulo.value), 0);
           var voltajeBarra = math.number(barra.voltaje.value);
           aVoltajesOperativos.subset(math.index(i), math.divide(voltaje, voltajeBarra));
@@ -406,7 +406,7 @@ function CalculosSrvc() {
       var tipo = barra.tipo.value;
 
       if (tipo == 'PV') {
-        var generador = getElementoPorIndiceTipo(math.add(i, 1), 'generadorPV', aElementos);
+        var generador = getElementoPorIndiceTipo(math.add(i, 1), 'GeneradorPV', aElementos);
         var voltaje = math.number(generador.voltajeModulo.value);
         var voltajeBarra = math.number(barra.voltaje.value);
         aVoltajesFijos.subset(math.index(i), math.divide(voltaje, voltajeBarra));

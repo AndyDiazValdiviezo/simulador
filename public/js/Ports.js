@@ -59,12 +59,14 @@ PortBarra = HybridPortFigure.extend({
 
       // Verifico si ya existe alguna conexión coincidente
       if (procede) {
+        var cnt = 0;
+
         for (var i = 0; i < this.getConnections().data.length; i++) {
           var conexion = this.getConnections().data[i];
           var source = conexion.getSource().getParent();
           var target = conexion.getTarget().getParent();
 
-          if (source.NAME == outFigure.NAME) {
+          if (source.id == outFigure.id) {
             procede = false;
           }
         };
@@ -93,6 +95,23 @@ PortBarra = HybridPortFigure.extend({
 
     if (connection.NAME != 'Linea') {
       srcFigure.userData['index' + srcPort.getLocator().indice] = thisFigure.userData.indexI;
+
+      switch (srcFigure.NAME) {
+        case 'GeneradorSW':
+          thisFigure.userData.tipo.value = 'SW';
+          break;
+
+        case 'GeneradorPV':
+          thisFigure.userData.tipo.value = 'PV';
+          break;
+
+        case 'Transformador2D':
+          var nameFaseTrafo = srcFigure.grupoConexion.value;
+          var gruposConexion = srcFigure.grupoConexion.opciones;
+          var valorFaseTrafo = Transformador2D.prototype.getVlrFaseTrafo(gruposConexion, nameFaseTrafo);
+          thisFigure.faseTrafo.value = valorFaseTrafo;
+          break;
+      }
 
     } else {
       if (thisFigure.id != srcFigure.id) {
