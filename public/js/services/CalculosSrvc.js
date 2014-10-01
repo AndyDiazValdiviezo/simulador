@@ -667,7 +667,6 @@ function CalculosSrvc() {
       'N': N,
     }
 
-    console.log(resultado);
     return resultado;
   }
 

@@ -116,16 +116,21 @@
         };
       };
 
-      var resultaados = CalculosSrvc.calculoIterativo(FiguresSrvc.cantidadBarras(), aElementos);
-      $scope.mostrarResultados(resultaados);
+      var resultados = CalculosSrvc.calculoIterativo(FiguresSrvc.cantidadBarras(), aElementos);
+      console.log(resultados);
+      $scope.mostrarResultados(resultados);
     }
 
-    $scope.mostrarResultados = function(resultaados) {
+    $scope.mostrarResultados = function(resultados) {
       var modalInstance = $modal.open({
-        templateUrl: 'templates/consola.html',
+        templateUrl: 'templates/resultados.html',
         controller: 'ResultadosCtrl',
         size: 'md',
-        resolve: {},
+        resolve: {
+          resultados: function() {
+            return resultados;
+          },
+        },
       });
 
       modalInstance.result.then(function() {
