@@ -1,0 +1,32 @@
+@import 'globales.less';
+@import 'parametros.less';
+
+.btn{
+  padding: 8px;
+  font-size: 15px;
+  border: none;
+  .corner(0px, 0px, 0px, 0px);
+}
+.btn-texto{
+  font-size: 12px;
+  padding: 0;
+  .fa{
+    padding: 8px 10px;
+    background-color: #DDD;
+  }
+  .texto{
+    padding: 0px 12px 0px 6px;
+    font-weight: 600;
+    font-family: @font-1;
+  }
+}
+.btn-celeste{
+  background-color: @cl-celeste;
+  color: #FFF;
+  .fa{
+    background-color: @cl-celeste * 0.9;
+  }
+}
+.btn-celeste:hover{
+  color: #FFF;
+}

@@ -1,0 +1,43 @@
+.border-box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.content-box {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.btn {
+  padding: 8px;
+  font-size: 15px;
+  border: none;
+  border-radius: 0px 0px 0px 0px;
+  -ms-border-radius: 0px 0px 0px 0px;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -khtml-border-radius: 0px 0px 0px 0px;
+}
+.btn-texto {
+  font-size: 12px;
+  padding: 0;
+}
+.btn-texto .fa {
+  padding: 8px 10px;
+  background-color: #DDD;
+}
+.btn-texto .texto {
+  padding: 0px 12px 0px 6px;
+  font-weight: 600;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.btn-celeste {
+  background-color: #19a9d5;
+  color: #FFF;
+}
+.btn-celeste .fa {
+  background-color: #1798c0;
+}
+.btn-celeste:hover {
+  color: #FFF;
+}

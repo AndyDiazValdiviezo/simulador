@@ -7,21 +7,40 @@
   <!-- CSS - Bootstrap -->
   <link rel="stylesheet" href="public/third-party/bootstrap/css/bootstrap.min.css">
 
+  <!-- Font awesome -->
+  <link rel="stylesheet" href="public/third-party/font-awesome/css/font-awesome.min.css">
+
+  <!-- Google web fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700' rel='stylesheet' type='text/css'>
+
   <!-- CSS - Propio -->
   <link rel="stylesheet" href="public/css/style.css">
+  <link rel="stylesheet" href="public/css/my-bootstrap.css">
 </head>
 <body>
 
   <div class="container-fluid">
     <div class="row seccion-header" ng-controller="HeaderCtrl as header">
       <div class="col-lg-12">
-        <div class="btn btn-primary" ng-click="zoomIn()">ZoomIn</div>
-        <div class="btn btn-primary" ng-click="zoomOut()">ZoomOut</div>
-        <div class="btn btn-warning" ng-click="exportar()">Exportar</div>
-        <div class="btn btn-danger" ng-click="guardar()">Guardar</div>
-        <div class="btn btn-default" ng-click="conexion()">Conexión</div>
-        <div class="btn btn-default" ng-click="linea()">Línea</div>
-        <div class="btn btn-danger pull-right" ng-click="calcular()">Calcular</div>
+        <buttom class="btn" ng-click="zoomIn()">
+          <i class="fa fa-search-plus"></i>
+        </buttom>
+        <buttom class="btn" ng-click="zoomOut()">
+          <i class="fa fa-search-minus"></i>
+        </buttom>
+        <buttom class="btn" ng-click="exportar()">
+          <i class="fa fa-floppy-o"></i>
+        </buttom>
+        <buttom class="btn" ng-click="conexion()">
+          <i class="fa fa-arrow-right"></i>
+        </buttom>
+        <buttom class="btn" ng-click="linea()">
+          <i class="fa fa-arrow-circle-right"></i>
+        </buttom>
+        <div class="btn pull-right btn-texto btn-celeste" ng-click="calcular()">
+          <i class="fa fa-play-circle"></i>
+          <span class="texto">Calcular</span>
+        </div>
         <input type="file" fileread="file">
       </div>
     </div>

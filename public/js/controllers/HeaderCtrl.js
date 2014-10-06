@@ -117,7 +117,6 @@
       };
 
       var resultados = CalculosSrvc.calculoIterativo(FiguresSrvc.cantidadBarras(), aElementos);
-      console.log(resultados);
       $scope.mostrarResultados(resultados);
     }
 

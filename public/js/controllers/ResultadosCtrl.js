@@ -60,7 +60,14 @@
       if (voltaje) {
         var polar = voltaje.toPolar();
         var r = math.round(polar.r, $rootScope.numDecimales);
-        var phi = math.round(polar.phi, $rootScope.numDecimales);
+
+        var phi = math.round(
+          math.multiply(
+            polar.phi,
+            math.divide(180, math.pi)
+          ),
+          $rootScope.numDecimales
+        );
 
         $scope.dataVoltajes[prop] = $sce.trustAsHtml(r + ' α ' + phi);
       };

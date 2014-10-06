@@ -200,7 +200,7 @@ function CalculosSrvc() {
         var elemento = getElementoEntreBarras(aElementos, math.sum(i, 1), math.sum(j, 1));
 
         if (elemento) {
-          if (elemento.type == 'linea') {
+          if (elemento.type == 'Linea') {
             var admitCapacitiva = math.number(elemento.admitanciaCapacitiva.value);
             aAdmitCapacitivas.subset(math.index(i, j), admitCapacitiva);
             aAdmitCapacitivas.subset(math.index(j, i), admitCapacitiva);
@@ -266,7 +266,7 @@ function CalculosSrvc() {
     var aCargaActiva = math.zeros(cantBarras);
 
     for (var i = 0; i < cantBarras; i++) {
-      var carga = getElementoPorIndiceTipo(math.sum(i, 1), 'carga', aElementos);
+      var carga = getElementoPorIndiceTipo(math.sum(i, 1), 'Carga', aElementos);
 
       if (carga) {
         var cargaActiva = math.divide(math.number(carga.cargaActiva.value), 100);
@@ -281,7 +281,7 @@ function CalculosSrvc() {
     var aCargaReactiva = math.zeros(cantBarras);
 
     for (var i = 0; i < cantBarras; i++) {
-      var carga = getElementoPorIndiceTipo(math.add(i, 1), 'carga', aElementos);
+      var carga = getElementoPorIndiceTipo(math.add(i, 1), 'Carga', aElementos);
 
       if (carga) {
         var cargaReactiva = math.divide(math.number(carga.cargaReactiva.value), 100);
@@ -514,7 +514,6 @@ function CalculosSrvc() {
                   ), f);
                 };
               };
-
 
               V.subset(indexI, math.multiply(
                 math.divide(1, Y.subset(indexII)),
