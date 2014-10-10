@@ -1,12 +1,5 @@
-// Truco para usar un servicio fuera de angular :3
-var FiguresSrvc;
-
-setTimeout(function() {
-  var elem = angular.element(document.querySelector('[ng-controller]'));
-  var injector = elem.injector();
-
-  FiguresSrvc = injector.get('FiguresSrvc');
-}, 100);
+// Variable para usar objetos de angular
+var portsData = {};
 
 ////////////////////////////////////
 // ----------PLANTILLAS---------- //
@@ -43,7 +36,7 @@ PortBarra = HybridPortFigure.extend({
 
     } else {
       // Verifico el tipo de conexión
-      switch (FiguresSrvc.tipoConexion()) {
+      switch (portsData.FiguresSrvc.tipoConexion()) {
         case 'conexion':
           if (outFigure.NAME == 'Barra') {
             procede = false;
@@ -139,7 +132,7 @@ PortGeneradorSW = OutputPortFigure.extend({
 
     } else {
       // Verifico el tipo de conexión
-      switch (FiguresSrvc.tipoConexion()) {
+      switch (portsData.FiguresSrvc.tipoConexion()) {
         case 'conexion':
           if (outFigure.NAME != 'Barra') {
             procede = false;
@@ -181,7 +174,7 @@ PortGeneradorPV = OutputPortFigure.extend({
 
     } else {
       // Verifico el tipo de conexión
-      switch (FiguresSrvc.tipoConexion()) {
+      switch (portsData.FiguresSrvc.tipoConexion()) {
         case 'conexion':
           if (outFigure.NAME != 'Barra') {
             procede = false;
@@ -223,7 +216,7 @@ PortTransformador2D = OutputPortFigure.extend({
 
     } else {
       // Verifico el tipo de conexión
-      switch (FiguresSrvc.tipoConexion()) {
+      switch (portsData.FiguresSrvc.tipoConexion()) {
         case 'conexion':
           if (outFigure.NAME != 'Barra') {
             procede = false;
@@ -274,7 +267,7 @@ PortTransformador3D = OutputPortFigure.extend({
 
     } else {
       // Verifico el tipo de conexión
-      switch (FiguresSrvc.tipoConexion()) {
+      switch (portsData.FiguresSrvc.tipoConexion()) {
         case 'conexion':
           if (outFigure.NAME != 'Barra') {
             procede = false;
@@ -324,7 +317,7 @@ PortCarga = OutputPortFigure.extend({
 
     } else {
       // Verifico el tipo de conexión
-      switch (FiguresSrvc.tipoConexion()) {
+      switch (portsData.FiguresSrvc.tipoConexion()) {
         case 'conexion':
           if (outFigure.NAME != 'Barra') {
             procede = false;

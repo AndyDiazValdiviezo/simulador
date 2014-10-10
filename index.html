@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" ng-app="simuladorApp">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>.:: Simulador ::.</title>
@@ -15,40 +15,67 @@
 
   <!-- CSS - Propio -->
   <link rel="stylesheet" href="public/css/style.css">
+  <link rel="stylesheet" href="public/css/user-data.css">
   <link rel="stylesheet" href="public/css/my-bootstrap.css">
 </head>
 <body>
 
   <div class="container-fluid">
-    <div class="row seccion-header" ng-controller="HeaderCtrl as header">
-      <div class="col-lg-12">
-        <buttom class="btn" ng-click="zoomIn()">
-          <i class="fa fa-search-plus"></i>
-        </buttom>
-        <buttom class="btn" ng-click="zoomOut()">
-          <i class="fa fa-search-minus"></i>
-        </buttom>
-        <buttom class="btn" ng-click="exportar()">
-          <i class="fa fa-floppy-o"></i>
-        </buttom>
-        <buttom class="btn" ng-click="conexion()">
-          <i class="fa fa-arrow-right"></i>
-        </buttom>
-        <buttom class="btn" ng-click="linea()">
-          <i class="fa fa-arrow-circle-right"></i>
-        </buttom>
-        <div class="btn pull-right btn-texto btn-celeste" ng-click="calcular()">
-          <i class="fa fa-play-circle"></i>
-          <span class="texto">Calcular</span>
-        </div>
-        <input type="file" fileread="file">
+    <div class="row sccn-header" ng-controller="HeaderCtrl as header">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-8">
+        <ul class="cntd-botones pull-right">
+          <li>
+            <div class="btn zoom-in" tooltip="Acercar" ng-click="zoomIn()">
+              <i class="fa fa-search-plus"></i>
+            </div>
+          </li>
+          <li>
+            <div class="btn zoom-out" tooltip="Alejar" ng-click="zoomOut()">
+              <i class="fa fa-search-minus"></i>
+            </div>
+          </li>
+          <li><div class="separador"></div></li>
+          <li>
+            <label class="my-input-file">
+              <div class="btn importar" tooltip="Importar archivo">
+                <i class="fa fa-cloud-upload"></i>
+              </div>
+              <input type="file" fileread="file">
+            </label>
+          </li>
+          <li>
+            <div class="btn exportar" tooltip="Exportar archivo" ng-click="exportar()">
+              <i class="fa fa-cloud-download"></i>
+            </div>
+          </li>
+          <li><div class="separador"></div></li>
+          <li>
+            <div class="btn conexion" tooltip="Conexión" ng-click="conexion()">
+              <i class="fa fa-arrow-circle-right"></i>
+            </div>
+          </li>
+          <li>
+            <div class="btn linea" tooltip="Linea" ng-click="linea()">
+              <i class="fa fa-arrow-right"></i>
+            </div>
+          </li>
+          <li><div class="separador"></div></li>
+          <li>
+            <div class="btn calcular" tooltip="Calcular" ng-click="calcular()">
+              <i class="fa fa-play-circle"></i>
+            </div>
+          </li>
+        </ul>
       </div>
+      <div class="col-lg-2"></div>
     </div>
     <div class="row">
       <div class="col-lg-1 ctnd-paleta" ng-controller="PaletaCtrl as paleta">
         <paleta>
           <div class="ctnd-canvas" ng-repeat="elemento in svgElemOrdenados()">
             <div id="canvas-paleta-{{ $index }}" data-name="{{ elemento.NAME }}"></div>
+            <span class="nombre">{{ elemento.titulo }}</span>
           </div>
         </paleta>
       </div>
@@ -99,7 +126,6 @@
   <script src="public/js/helpers.js"></script>
 
   <!-- Scripts - Lógica -->
-  <script src="public/js/Globales.js"></script>
   <script src="public/js/Locators.js"></script>
   <script src="public/js/Ports.js"></script>
   <script src="public/js/SVGs.js"></script>

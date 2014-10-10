@@ -1,12 +1,5 @@
-// Truco para usar un servicio fuera de angular :3
-var MixinSrvc;
-
-setTimeout(function() {
-  var elem = angular.element(document.querySelector('[ng-controller]'));
-  var injector = elem.injector();
-
-  MixinSrvc = injector.get('MixinSrvc');
-}, 100);
+// Variable para usar objetos de angular
+var figuresData = {};
 
 ////////////////////////////////////
 // ----------PLANTILLAS---------- //
@@ -20,7 +13,7 @@ Figure = draw2d.SVGFigure.extend({
     this.height = 65;
 
     this.on('click', function(emmiter, obj) {
-      MixinSrvc.setElmSeleccionado(emmiter);
+      figuresData.MixinSrvc.setElmSeleccionado(emmiter);
     });
   },
   getPersistentAttributes: function() {
@@ -119,7 +112,7 @@ Linea = draw2d.Connection.extend({
   },
   onClick: function() {
     this._super();
-    MixinSrvc.setElmSeleccionado(this);
+    figuresData.MixinSrvc.setElmSeleccionado(this);
   },
   getPersistentAttributes: function() {
     var memento = this._super();
@@ -133,6 +126,7 @@ Linea = draw2d.Connection.extend({
 
 Barra = Figure.extend({
   NAME: 'Barra',
+  titulo: 'Barra',
   init: function(paleta) {
     this._super();
     this.addPort(new PortBarra(), new BarraHybridLocator());
@@ -167,6 +161,7 @@ Barra = Figure.extend({
 
 GeneradorSW = Figure.extend({
   NAME: 'GeneradorSW',
+  titulo: 'Generador SW',
   init: function(paleta) {
     this._super();
     this.addPort(new PortGeneradorSW(), new GeneradorSWOutputLocator());
@@ -202,6 +197,7 @@ GeneradorSW = Figure.extend({
 
 GeneradorPV = Figure.extend({
   NAME: 'GeneradorPV',
+  titulo: 'Generador PV',
   init: function(paleta) {
     this._super();
     this.addPort(new PortGeneradorPV(), new GeneradorPVOutputLocator());
@@ -247,6 +243,7 @@ GeneradorPV = Figure.extend({
 
 Transformador2D = Figure.extend({
   NAME: 'Transformador2D',
+  titulo: 'Transformador 2D',
   init: function(paleta) {
     this._super();
     this.addPort(new PortTransformador2D(), new Transformador2DOutputLocator1());
@@ -368,6 +365,7 @@ Transformador2D = Figure.extend({
 
 Transformador3D = Figure.extend({
   NAME: 'Transformador3D',
+  titulo: 'Transformador 3D',
   init: function(paleta) {
     this._super();
     this.addPort(new PortTransformador3D(), new Transformador3DOutputLocator1());
@@ -451,6 +449,7 @@ Transformador3D = Figure.extend({
 
 Carga = Figure.extend({
   NAME: 'Carga',
+  titulo: 'Carga',
   init: function(paleta) {
     this._super();
     this.addPort(new PortCarga(), new CargaOutputLocator());

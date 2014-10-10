@@ -1,24 +1,18 @@
 @import 'globales.less';
 @import 'parametros.less';
 
+// Botones
 .btn{
-  padding: 8px;
-  font-size: 15px;
+  margin: 0;
+  padding: 8px 10px;
+  font-size: @fz-button-1;
+  line-height: @fz-button-1;
   border: none;
   .corner(0px, 0px, 0px, 0px);
+  .transicion(0.15s);
 }
-.btn-texto{
-  font-size: 12px;
-  padding: 0;
-  .fa{
-    padding: 8px 10px;
-    background-color: #DDD;
-  }
-  .texto{
-    padding: 0px 12px 0px 6px;
-    font-weight: 600;
-    font-family: @font-1;
-  }
+.btn:active{
+  box-shadow: none;
 }
 .btn-celeste{
   background-color: @cl-celeste;
@@ -29,4 +23,97 @@
 }
 .btn-celeste:hover{
   color: #FFF;
+}
+
+// Label
+label{
+  font-weight: normal;
+}
+
+// Controles de formulario
+.form-control{
+  height: 30px;
+  box-shadow: none;
+  .corner(0px, 0px, 0px, 0px);
+}
+
+// Diálogo modal
+.modal-dialog{
+  .modal-content{
+    font-family: @font-1;
+    .corner(0px, 0px, 0px, 0px);
+    .modal-header{
+      background-color: #444;
+      color: #FFF;
+      padding: 8px 14px;
+      >.modal-title{
+        font-size: 15px;
+        font-weight: 600;
+      }
+      .close{
+        margin-top: 0px;
+        opacity: 1;
+        color: #FFF;
+        span{
+        }
+      }
+    }
+  }
+}
+
+// Pestañas horizontales
+.nav-pills{
+  border-bottom: 1px solid #444;
+  background-color: #444;
+  >li{
+    border: none;
+    >a{
+      margin-bottom: -1px;
+      padding: 7px 12px;
+      color: #FAFAFA;
+      font-size: 13px;
+      font-weight: 600;
+      border-top: 1px solid transparent;
+      border-right: 1px solid transparent;
+      border-bottom: 1px solid #444;
+      border-left: 1px solid transparent;
+      cursor: pointer;
+      .corner(0px, 0px, 0px, 0px);
+    }
+  }
+  >li:hover{
+    >a{
+      background-color: #666;
+    }
+  }
+  >li.active{
+    >a{
+      color: #428BCA;
+      background-color: #FFF;
+      border-top: 1px solid #DDD;
+      border-right: 1px solid #DDD;
+      border-bottom: 1px solid transparent;
+      border-left: 1px solid #DDD;
+      cursor: default;
+    }
+  }
+  >li.active:hover{
+    >a{
+      color: #428BCA;
+      background-color: #FFF;
+    }
+  }
+  >li + li{
+    margin: 0;
+  }
+}
+
+// Paneles
+.tab-content{
+  margin-top: -1px;
+  padding: 10px;
+  border-top: none;
+  border-right: 1px solid #DDD;
+  border-left: 1px solid #DDD;
+  border-bottom: 1px solid #DDD;
 }

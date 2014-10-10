@@ -1,28 +1,32 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="titulo">{{ elementoSeleccionado.titulo }}</h1>
+  </div>
+</div>
+
 <!-- Barra -->
 <div ng-if="elementoSeleccionado.NAME == 'Barra'">
   <div class="row">
-    <!-- Voltaje -->
     <div class="col-lg-12">
-      <div class="form-group">
-        <label for="{{ getCampo('voltaje').name }}">{{ getCampo('voltaje').label }}</label>
-        <input type="text" name="{{ getCampo('voltaje').name }}" id="{{ getCampo('voltaje').name }}" ng-model="getCampo('voltaje').value" class="form-control" format tipo="decimal">
-      </div>
-    </div>
+      <form role="form">
+        <!-- Voltaje -->
+        <div class="form-group">
+          <label for="{{ getCampo('voltaje').name }}">{{ getCampo('voltaje').label }}</label>
+          <input type="text" name="{{ getCampo('voltaje').name }}" id="{{ getCampo('voltaje').name }}" ng-model="getCampo('voltaje').value" class="form-control" format tipo="decimal">
+        </div>
 
-    <!-- Desfase -->
-    <div class="col-lg-12">
-      <div class="form-group">
-        <label for="{{ getCampo('desfase').name }}">{{ getCampo('desfase').label }}</label>
-        <input type="text" name="{{ getCampo('desfase').name }}" id="{{ getCampo('desfase').name }}" ng-model="getCampo('desfase').value" class="form-control" format tipo="decimal">
-      </div>
-    </div>
+        <!-- Desfase -->
+        <div class="form-group">
+          <label for="{{ getCampo('desfase').name }}">{{ getCampo('desfase').label }}</label>
+          <input type="text" name="{{ getCampo('desfase').name }}" id="{{ getCampo('desfase').name }}" ng-model="getCampo('desfase').value" class="form-control" format tipo="decimal">
+        </div>
 
-    <!-- Fase trafo -->
-    <div class="col-lg-12">
-      <div class="form-group">
-        <label for="{{ getCampo('faseTrafo').name }}">{{ getCampo('faseTrafo').label }}</label>
-        <input type="text" name="{{ getCampo('faseTrafo').name }}" id="{{ getCampo('faseTrafo').name }}" ng-model="getCampo('faseTrafo').value" class="form-control" format tipo="decimal">
-      </div>
+        <!-- Fase trafo -->
+        <div class="form-group">
+          <label for="{{ getCampo('faseTrafo').name }}">{{ getCampo('faseTrafo').label }}</label>
+          <input type="text" name="{{ getCampo('faseTrafo').name }}" id="{{ getCampo('faseTrafo').name }}" ng-model="getCampo('faseTrafo').value" class="form-control" format tipo="decimal">
+        </div>
+      </form>
     </div>
   </div>
 </div>

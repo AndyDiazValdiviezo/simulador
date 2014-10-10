@@ -4,23 +4,6 @@ function FiguresSrvc(MixinSrvc) {
 
   my.canvasDiagrama = new draw2d.Canvas('canvas-diagrama');
 
-
-  draw2d.Connection.createConnection = function(sourcePort, targetPort, callback, dropTarget) {
-    switch (my.tipoConexion()) {
-      case 'conexion':
-        var connection = new Conexion();
-        MixinSrvc.setElmSeleccionado(null);
-        break;
-
-      case 'linea':
-        var connection = new Linea();
-        MixinSrvc.setElmSeleccionado(connection);
-        break;
-    }
-
-    return connection;
-  };
-
   hiddenMy.tipoConexion = '';
 
   my.tipoConexion = function(tipo) {
