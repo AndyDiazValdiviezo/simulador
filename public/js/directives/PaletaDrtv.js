@@ -11,9 +11,12 @@
             var canvas = new draw2d.Canvas('canvas-paleta-' + i);
             canvas.installEditPolicy(policy);
 
+            canvas.html.css({
+              'cursor': 'move',
+            });
+
             $element.find('#canvas-paleta-' + i).draggable({
               helper: 'clone',
-              cursor: 'crosshair',
             });
 
             var elemento = $scope.svgElemOrdenados()[i];

@@ -8,7 +8,20 @@ HybridPortFigure = draw2d.HybridPort.extend({
   NAME: 'HybridPortFigure',
   init: function() {
     this._super();
+    this.setStroke(0);
     this.setVisible(false);
+  },
+  onMouseEnter: function() {
+    this._super();
+    this.setStroke(0);
+  },
+  onMouseLeave: function() {
+    this._super();
+    this.setStroke(0);
+  },
+  onDragStart: function(x, y, shiftKey, ctrlKey) {
+    this._super(x, y, shiftKey, ctrlKey);
+    this.toFront(this.getParent());
   },
 });
 
@@ -16,7 +29,20 @@ OutputPortFigure = draw2d.OutputPort.extend({
   NAME: 'OutputPortFigure',
   init: function() {
     this._super();
+    this.setStroke(0);
     this.setVisible(false);
+  },
+  onMouseEnter: function() {
+    this._super();
+    this.setStroke(0);
+  },
+  onMouseLeave: function() {
+    this._super();
+    this.setStroke(0);
+  },
+  onDragStart: function(x, y, shiftKey, ctrlKey) {
+    this._super(x, y, shiftKey, ctrlKey);
+    this.toFront(this.getParent());
   },
 });
 
@@ -25,6 +51,11 @@ OutputPortFigure = draw2d.OutputPort.extend({
 /////////////////////////////////
 PortBarra = HybridPortFigure.extend({
   NAME: 'PortBarra',
+  init: function() {
+    this._super();
+    this.setBackgroundColor('#3497DA');
+    this.setColor('#3497DA');
+  },
   onDragEnter: function(draggedFigure) {
     var thisFigure = this.getParent();
     var outFigure = draggedFigure.getParent();
@@ -121,6 +152,11 @@ PortBarra = HybridPortFigure.extend({
 
 PortGeneradorSW = OutputPortFigure.extend({
   NAME: 'PortGeneradorSW',
+  init: function() {
+    this._super();
+    this.setBackgroundColor('#FFED18');
+    this.setColor('#FFED18');
+  },
   onDragEnter: function(draggedFigure) {
     var thisFigure = this.getParent();
     var outFigure = draggedFigure.getParent();

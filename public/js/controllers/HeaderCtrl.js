@@ -16,10 +16,20 @@
     /////////////////////////////////
     $scope.zoomIn = function() {
       $scope.canvasDiagrama().setZoom($scope.canvasDiagrama().getZoom() * (4 / 5), true);
+
+      for (var i = 0; i < $scope.canvasDiagrama().getLines().data.length; i++) {
+        var stroke = $scope.canvasDiagrama().getLines().data[i].stroke;
+        $scope.canvasDiagrama().getLines().data[i].setStroke(stroke * (5 / 4));
+      };
     }
 
     $scope.zoomOut = function() {
       $scope.canvasDiagrama().setZoom($scope.canvasDiagrama().getZoom() * (5 / 4), true);
+
+      for (var i = 0; i < $scope.canvasDiagrama().getLines().data.length; i++) {
+        var stroke = $scope.canvasDiagrama().getLines().data[i].stroke;
+        $scope.canvasDiagrama().getLines().data[i].setStroke(stroke * (4 / 5));
+      };
     }
 
     $scope.cargar = function(file) {

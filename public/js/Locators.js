@@ -60,23 +60,23 @@ GeneradorSWOutputLocator = draw2d.layout.locator.OutputPortLocator.extend({
 
     switch (angle) {
       case 0:
-        x = width * 0.5;
-        y = height * 0.995;
+        x = width * 0.499;
+        y = height * 0.969;
         break;
 
       case 90:
-        x = width * 0;
-        y = height * 0.5;
+        x = width * 0.0155;
+        y = height * 0.4972;
         break;
 
       case 180:
         x = width * 0.485;
-        y = height * 0;
+        y = height * 0.0475;
         break;
 
       case 270:
-        x = width * 0.99;
-        y = height * 0.49;
+        x = width * 0.968;
+        y = height * 0.485;
         break;
     }
 

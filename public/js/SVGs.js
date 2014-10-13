@@ -2,7 +2,7 @@ var color = '#000';
 
 var svgCollection = {
   barra: [
-    '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" cursor="pointer">',
+    '<svg xmlns="http://www.w3.org/2000/svg" version="1.1">',
     '<rect height="50" width="50" y="0" x="0" stroke-width="0" stroke="' + color + '" fill="none"/>',
     '<line stroke-width="3" y2="25" x2="45" y1="25" x1="5" stroke="' + color + '"/>',
     '</svg>',

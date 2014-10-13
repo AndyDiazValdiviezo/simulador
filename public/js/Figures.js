@@ -49,10 +49,10 @@ Conexion = draw2d.Connection.extend({
   NAME: 'Conexion',
   init: function() {
     this._super();
-    this.setStroke(3);
+    this.setStroke(1.5);
     this.setRadius(0);
-    this.setColor('#66AB16');
-    this.setRouter(new draw2d.layout.connection.ManhattanConnectionRouter());
+    this.setColor('#000000');
+    this.setRouter(new draw2d.layout.connection.InteractiveManhattanConnectionRouter());
   },
   getPersistentAttributes: function() {
     var memento = this._super();
@@ -68,9 +68,9 @@ Linea = draw2d.Connection.extend({
   NAME: 'Linea',
   init: function() {
     this._super();
-    this.setStroke(3);
+    this.setStroke(1.5);
     this.setRadius(0);
-    this.setColor('#D14836');
+    this.setColor('#FF0029');
     this.setRouter(new draw2d.layout.connection.ManhattanConnectionRouter());
 
     this.userData = {
