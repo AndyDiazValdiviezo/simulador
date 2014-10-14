@@ -101,23 +101,23 @@ GeneradorPVOutputLocator = draw2d.layout.locator.OutputPortLocator.extend({
 
     switch (angle) {
       case 0:
-        x = width * 0.5;
-        y = height * 0.995;
+        x = width * 0.502;
+        y = height * 0.97;
         break;
 
       case 90:
-        x = width * 0;
-        y = height * 0.5;
+        x = width * 0.015;
+        y = height * 0.495;
         break;
 
       case 180:
-        x = width * 0.485;
-        y = height * 0;
+        x = width * 0.482;
+        y = height * 0.015;
         break;
 
       case 270:
-        x = width * 0.99;
-        y = height * 0.49;
+        x = width * 0.97;
+        y = height * 0.485;
         break;
     }
 
@@ -148,17 +148,17 @@ Transformador2DOutputLocator1 = draw2d.layout.locator.OutputPortLocator.extend({
 
       case 90:
         x = width * 0.97;
-        y = height * 0.5;
+        y = height * 0.497;
         break;
 
       case 180:
-        x = width * 0.488;
+        x = width * 0.484;
         y = height * 0.97;
         break;
 
       case 270:
-        x = width * 0.015;
-        y = height * 0.49;
+        x = width * 0.0155;
+        y = height * 0.485;
         break;
     }
 
@@ -181,23 +181,23 @@ Transformador2DOutputLocator2 = draw2d.layout.locator.OutputPortLocator.extend({
 
     switch (angle) {
       case 0:
-        x = width * 0.5;
-        y = height * 0.995;
+        x = width * 0.505;
+        y = height * 0.985;
         break;
 
       case 90:
-        x = width * 0;
+        x = width * 0.005;
         y = height * 0.5;
         break;
 
       case 180:
         x = width * 0.48;
-        y = height * 0;
+        y = height * 0.005;
         break;
 
       case 270:
-        x = width * 0.99;
-        y = height * 0.49;
+        x = width * 0.985;
+        y = height * 0.485;
         break;
     }
 
@@ -223,22 +223,22 @@ Transformador3DOutputLocator1 = draw2d.layout.locator.OutputPortLocator.extend({
     switch (angle) {
       case 0:
         x = width * 0.5;
-        y = height * 0.045;
+        y = height * 0.06;
         break;
 
       case 90:
-        x = width * 0.94;
+        x = width * 0.92;
         y = height * 0.5;
         break;
 
       case 180:
         x = width * 0.49;
-        y = height * 0.942;
+        y = height * 0.925;
         break;
 
       case 270:
-        x = width * 0.05;
-        y = height * 0.5;
+        x = width * 0.055;
+        y = height * 0.49;
         break;
     }
 
@@ -261,23 +261,23 @@ Transformador3DOutputLocator2 = draw2d.layout.locator.OutputPortLocator.extend({
 
     switch (angle) {
       case 0:
-        x = width * 0.147;
-        y = height * 0.925;
+        x = width * 0.16;
+        y = height * 0.922;
         break;
 
       case 90:
-        x = width * 0.055;
-        y = height * 0.145;
+        x = width * 0.065;
+        y = height * 0.158;
         break;
 
       case 180:
-        x = width * 0.84;
-        y = height * 0.05;
+        x = width * 0.825;
+        y = height * 0.07;
         break;
 
       case 270:
-        x = width * 0.925;
-        y = height * 0.845;
+        x = width * 0.92;
+        y = height * 0.83;
         break;
     }
 
@@ -305,18 +305,18 @@ Transformador3DOutputLocator3 = draw2d.layout.locator.OutputPortLocator.extend({
         break;
 
       case 90:
-        x = width * 0.045;
+        x = width * 0.06;
         y = height * 0.85;
         break;
 
       case 180:
-        x = width * 0.125
-        y = height * 0.05;
+        x = width * 0.14;
+        y = height * 0.075;
         break;
 
       case 270:
         x = width * 0.925;
-        y = height * 0.125;
+        y = height * 0.14;
         break;
     }
 
@@ -346,7 +346,7 @@ CargaOutputLocator = draw2d.layout.locator.OutputPortLocator.extend({
         break;
 
       case 90:
-        x = width * 0.86;
+        x = width * 0.85;
         y = height * 0.5;
         break;
 
@@ -356,7 +356,7 @@ CargaOutputLocator = draw2d.layout.locator.OutputPortLocator.extend({
         break;
 
       case 270:
-        x = width * 0.15;
+        x = width * 0.14;
         y = height * 0.487;
         break;
     }

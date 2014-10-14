@@ -117,6 +117,8 @@ PortBarra = HybridPortFigure.extend({
     var srcFigure = srcPort.getParent();
     var thisFigure = this.getParent();
 
+    connection.toBack();
+
     if (connection.NAME != 'Linea') {
       srcFigure.userData['index' + srcPort.getLocator().indice] = thisFigure.userData.indexI;
 
@@ -154,8 +156,8 @@ PortGeneradorSW = OutputPortFigure.extend({
   NAME: 'PortGeneradorSW',
   init: function() {
     this._super();
-    this.setBackgroundColor('#FFED18');
-    this.setColor('#FFED18');
+    this.setBackgroundColor('#E7E03B');
+    this.setColor('#E7E03B');
   },
   onDragEnter: function(draggedFigure) {
     var thisFigure = this.getParent();
@@ -199,6 +201,11 @@ PortGeneradorSW = OutputPortFigure.extend({
 
 PortGeneradorPV = OutputPortFigure.extend({
   NAME: 'PortGeneradorPV',
+  init: function() {
+    this._super();
+    this.setBackgroundColor('#EC5858');
+    this.setColor('#EC5858');
+  },
   onDragEnter: function(draggedFigure) {
     var thisFigure = this.getParent();
     var outFigure = draggedFigure.getParent();
@@ -241,6 +248,11 @@ PortGeneradorPV = OutputPortFigure.extend({
 
 PortTransformador2D = OutputPortFigure.extend({
   NAME: 'PortTransformador2D',
+  init: function() {
+    this._super();
+    this.setBackgroundColor('#30C236');
+    this.setColor('#30C236');
+  },
   onDragEnter: function(draggedFigure) {
     var thisFigure = this.getParent();
     var outFigure = draggedFigure.getParent();
@@ -292,6 +304,11 @@ PortTransformador2D = OutputPortFigure.extend({
 
 PortTransformador3D = OutputPortFigure.extend({
   NAME: 'PortTransformador3D',
+  init: function() {
+    this._super();
+    this.setBackgroundColor('#7C40D6');
+    this.setColor('#7C40D6');
+  },
   onDragEnter: function(draggedFigure) {
     var thisFigure = this.getParent();
     var outFigure = draggedFigure.getParent();
@@ -342,6 +359,11 @@ PortTransformador3D = OutputPortFigure.extend({
 
 PortCarga = OutputPortFigure.extend({
   NAME: 'PortCarga',
+  init: function() {
+    this._super();
+    this.setBackgroundColor('#F09624');
+    this.setColor('#F09624');
+  },
   onDragEnter: function(draggedFigure) {
     var thisFigure = this.getParent();
     var outFigure = draggedFigure.getParent();

@@ -70,7 +70,7 @@ Linea = draw2d.Connection.extend({
     this._super();
     this.setStroke(1.5);
     this.setRadius(0);
-    this.setColor('#FF0029');
+    this.setColor('#1891A2');
     this.setRouter(new draw2d.layout.connection.ManhattanConnectionRouter());
 
     this.userData = {
