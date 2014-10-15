@@ -4,32 +4,6 @@
 </div>
 <div class="modal-body">
   <tabset type="pills">
-    <tab heading="Admitancias">
-      <table class="table">
-        <tr>
-          <th class="text-center">Posición</th>
-          <th class="text-center">Valor</th>
-        </tr>
-        <tr ng-repeat="(key, value) in dataAdmitancias">
-          <td class="text-center">{{ key }}</td>
-          <td class="text-center">{{ value }}</td>
-        </tr>
-      </table>
-    </tab>
-    <tab heading="Potencias">
-      <table class="table">
-        <tr>
-          <th class="text-center">Posición</th>
-          <th class="text-center">Activa</th>
-          <th class="text-center">Reactiva</th>
-        </tr>
-        <tr ng-repeat="(key, obj) in dataPotencias">
-          <td class="text-center">{{ key }}</td>
-          <td class="text-center">{{ obj.activa }}</td>
-          <td class="text-center">{{ obj.reactiva }}</td>
-        </tr>
-      </table>
-    </tab>
     <tab heading="Voltajes finales">
       <table class="table">
         <tr>
@@ -39,6 +13,18 @@
         <tr ng-repeat="(key, value) in dataVoltajes">
           <td class="text-center">{{ key }}</td>
           <td class="text-center" ng-bind-html="value"></td>
+        </tr>
+      </table>
+    </tab>
+    <tab heading="Admitancias">
+      <table class="table">
+        <tr>
+          <th class="text-center">Posición</th>
+          <th class="text-center">Valor</th>
+        </tr>
+        <tr ng-repeat="(key, value) in dataAdmitancias">
+          <td class="text-center">{{ key }}</td>
+          <td class="text-center">{{ value }}</td>
         </tr>
       </table>
     </tab>

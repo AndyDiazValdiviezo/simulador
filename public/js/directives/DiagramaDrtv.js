@@ -2,8 +2,12 @@
   function DiagramaDrtv($timeout, FiguresSrvc, MixinSrvc) {
     return {
       restrict: 'EA',
+      templateUrl: 'templates/diagrama.html',
+      scope: false,
       link: function($scope, $element, $attrs) {
         $timeout(function() {
+          FiguresSrvc.canvasDiagrama = new draw2d.Canvas('canvas-diagrama');
+
           $element.find('#canvas-diagrama').droppable({
             accept: '*',
             drop: function(event, ui) {

@@ -2,7 +2,7 @@ function FiguresSrvc(MixinSrvc) {
   var my = {};
   var hiddenMy = {};
 
-  my.canvasDiagrama = new draw2d.Canvas('canvas-diagrama');
+  my.canvasDiagrama;
 
   hiddenMy.tipoConexion = '';
 

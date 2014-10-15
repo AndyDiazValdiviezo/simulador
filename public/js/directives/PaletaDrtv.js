@@ -2,6 +2,7 @@
   function PaletaDrtv($timeout, FiguresSrvc) {
     return {
       restrict: 'EA',
+      templateUrl: 'templates/paleta.html',
       link: function($scope, $element, $attrs) {
         $timeout(function() {
           var policy = new draw2d.policy.canvas.SelectionPolicy();

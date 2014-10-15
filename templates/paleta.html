@@ -1,6 +1,4 @@
-  <div class="col-lg-6" ng-repeat="(key, elemento) in elementos" ng-show="elemento.attributes.enPaleta">
-    <div class="cont-elemento" on-repeat-done="domain_done">
-      <div class="draggable" data-key="{{key}}" ng-bind-html="elemento.attributes.fullMarkup"></div>
-      <span class="nombre">{{elemento.attributes.titulo}}</span>
-    </div>
-  </div>
+<div class="ctnd-canvas" ng-repeat="elemento in svgElemOrdenados()">
+  <div id="canvas-paleta-{{ $index }}" data-name="{{ elemento.NAME }}"></div>
+  <span class="nombre">{{ elemento.titulo }}</span>
+</div>

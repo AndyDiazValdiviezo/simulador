@@ -27,23 +27,29 @@ html{
             z-index: 10;
             top: 110%;
             left: 100%;
+            opacity: 0;
+            visibility: hidden;
             font-family: @font-1;
             font-size: 14px;
             color: #555;
             font-weight: 600;
             content : attr(tooltip);
-            opacity : 0;
             .transicion(0.15s);
           }
           .btn[tooltip]:hover:before{
+            visibility: visible;
             opacity: 1;
           }
-          .zoom-in:hover{
+          .zoom-out:hover{
             background-color: @cl-verde;
             color: #FFF;
           }
-          .zoom-out:hover{
+          .zoom-in:hover{
             background-color: @cl-verde * 0.9;
+            color: #FFF;
+          }
+          .zoom-init:hover{
+            background-color: @cl-verde * 0.8;
             color: #FFF;
           }
           .importar:hover{
@@ -55,15 +61,15 @@ html{
             color: #FFF;
           }
           .conexion:hover, .conexion.activo{
-            background-color: @cl-amarillo;
+            background-color: @cl-celeste;
             color: #FFF;
           }
           .linea:hover, .linea.activo{
-            background-color: @cl-amarillo * 0.9;
+            background-color: @cl-celeste * 0.9;
             color: #FFF;
           }
           .calcular:hover{
-            background-color: @cl-celeste;
+            background-color: @cl-amarillo;
             color: #FFF;
           }
           .my-input-file{

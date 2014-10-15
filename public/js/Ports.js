@@ -119,6 +119,11 @@ PortBarra = HybridPortFigure.extend({
 
     connection.toBack();
 
+    if (thisFigure.id != srcFigure.id) {
+      var stroke = connection.getStroke() / portsData.FiguresSrvc.canvasDiagrama.getZoom();
+      connection.setStroke(stroke);
+    };
+
     if (connection.NAME != 'Linea') {
       srcFigure.userData['index' + srcPort.getLocator().indice] = thisFigure.userData.indexI;
 

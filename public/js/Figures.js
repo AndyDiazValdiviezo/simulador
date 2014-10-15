@@ -54,6 +54,10 @@ Conexion = draw2d.Connection.extend({
     this.setColor('#000000');
     this.setRouter(new draw2d.layout.connection.InteractiveManhattanConnectionRouter());
   },
+  setPersistentAttributes: function(memento) {
+    this._super(memento);
+    this.setStroke(1.5);
+  },
   getPersistentAttributes: function() {
     var memento = this._super();
 
@@ -113,6 +117,10 @@ Linea = draw2d.Connection.extend({
   onClick: function() {
     this._super();
     figuresData.MixinSrvc.setElmSeleccionado(this);
+  },
+  setPersistentAttributes: function(memento) {
+    this._super(memento);
+    this.setStroke(1.5);
   },
   getPersistentAttributes: function() {
     var memento = this._super();

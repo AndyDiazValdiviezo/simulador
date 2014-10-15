@@ -37,26 +37,32 @@ html body .sccn-header .cntd-botones li .btn[tooltip]:before {
   z-index: 10;
   top: 110%;
   left: 100%;
+  opacity: 0;
+  visibility: hidden;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
   color: #555;
   font-weight: 600;
   content: attr(tooltip);
-  opacity: 0;
   -webkit-transition: all 0.15s;
   -moz-transition: all 0.15s;
   -o-transition: all 0.15s;
   transition: all 0.15s;
 }
 html body .sccn-header .cntd-botones li .btn[tooltip]:hover:before {
+  visibility: visible;
   opacity: 1;
 }
-html body .sccn-header .cntd-botones li .zoom-in:hover {
+html body .sccn-header .cntd-botones li .zoom-out:hover {
   background-color: #27c24c;
   color: #FFF;
 }
-html body .sccn-header .cntd-botones li .zoom-out:hover {
+html body .sccn-header .cntd-botones li .zoom-in:hover {
   background-color: #23af44;
+  color: #FFF;
+}
+html body .sccn-header .cntd-botones li .zoom-init:hover {
+  background-color: #1f9b3d;
   color: #FFF;
 }
 html body .sccn-header .cntd-botones li .importar:hover {
@@ -67,16 +73,18 @@ html body .sccn-header .cntd-botones li .exportar:hover {
   background-color: #dd8846;
   color: #FFF;
 }
-html body .sccn-header .cntd-botones li .conexion:hover {
-  background-color: #f9d21a;
+html body .sccn-header .cntd-botones li .conexion:hover,
+html body .sccn-header .cntd-botones li .conexion.activo {
+  background-color: #19a9d5;
   color: #FFF;
 }
-html body .sccn-header .cntd-botones li .linea:hover {
-  background-color: #e0bd17;
+html body .sccn-header .cntd-botones li .linea:hover,
+html body .sccn-header .cntd-botones li .linea.activo {
+  background-color: #1798c0;
   color: #FFF;
 }
 html body .sccn-header .cntd-botones li .calcular:hover {
-  background-color: #19a9d5;
+  background-color: #f9d21a;
   color: #FFF;
 }
 html body .sccn-header .cntd-botones li .my-input-file {

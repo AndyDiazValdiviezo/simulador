@@ -19,20 +19,24 @@
   <link rel="stylesheet" href="public/css/my-bootstrap.css">
 </head>
 <body>
-
   <div class="container-fluid">
     <div class="row sccn-header" ng-controller="HeaderCtrl as header">
       <div class="col-lg-2"></div>
       <div class="col-lg-8">
         <ul class="cntd-botones pull-right">
           <li>
+            <div class="btn zoom-out" tooltip="Alejar" ng-click="zoomOut()">
+              <i class="fa fa-search-minus"></i>
+            </div>
+          </li>
+          <li>
             <div class="btn zoom-in" tooltip="Acercar" ng-click="zoomIn()">
               <i class="fa fa-search-plus"></i>
             </div>
           </li>
           <li>
-            <div class="btn zoom-out" tooltip="Alejar" ng-click="zoomOut()">
-              <i class="fa fa-search-minus"></i>
+            <div class="btn zoom-init" tooltip="Original" ng-click="zoomInit()">
+              <i class="fa fa-compress"></i>
             </div>
           </li>
           <li><div class="separador"></div></li>
@@ -51,12 +55,12 @@
           </li>
           <li><div class="separador"></div></li>
           <li>
-            <div class="btn conexion" tooltip="Conexión" ng-click="conexion()">
+            <div class="btn conexion" ng-class="{'activo': tipoConexion() == 'conexion'}" tooltip="Conexión" ng-click="conexion()">
               <i class="fa fa-arrow-circle-right"></i>
             </div>
           </li>
           <li>
-            <div class="btn linea" tooltip="Linea" ng-click="linea()">
+            <div class="btn linea" ng-class="{'activo': tipoConexion() == 'linea'}" tooltip="Linea" ng-click="linea()">
               <i class="fa fa-arrow-right"></i>
             </div>
           </li>
@@ -72,17 +76,10 @@
     </div>
     <div class="row">
       <div class="col-lg-1 ctnd-paleta" ng-controller="PaletaCtrl as paleta">
-        <paleta>
-          <div class="ctnd-canvas" ng-repeat="elemento in svgElemOrdenados()">
-            <div id="canvas-paleta-{{ $index }}" data-name="{{ elemento.NAME }}"></div>
-            <span class="nombre">{{ elemento.titulo }}</span>
-          </div>
-        </paleta>
+        <paleta></paleta>
       </div>
       <div class="col-lg-9 ctnd-diagrama" ng-controller="DiagramaCtrl as diagrama">
-        <diagrama>
-          <div id="canvas-diagrama"></div>
-        </diagrama>
+        <diagrama></diagrama>
       </div>
       <div class="col-lg-2 ctnd-user-data" ng-controller="UserDataCtrl as userData">
         <userdata></userdata>

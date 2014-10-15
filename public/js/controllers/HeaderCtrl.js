@@ -14,21 +14,36 @@
     /////////////////////////////////
     // ----------MÉTODOS---------- //
     /////////////////////////////////
+    var zoomFactor = 4 / 5;
     $scope.zoomIn = function() {
-      $scope.canvasDiagrama().setZoom($scope.canvasDiagrama().getZoom() * (4 / 5), true);
+      var factor = zoomFactor;
+
+      $scope.canvasDiagrama().setZoom($scope.canvasDiagrama().getZoom() * factor, true);
 
       for (var i = 0; i < $scope.canvasDiagrama().getLines().data.length; i++) {
         var stroke = $scope.canvasDiagrama().getLines().data[i].stroke;
-        $scope.canvasDiagrama().getLines().data[i].setStroke(stroke * (5 / 4));
+        $scope.canvasDiagrama().getLines().data[i].setStroke(stroke / factor);
       };
     }
 
     $scope.zoomOut = function() {
-      $scope.canvasDiagrama().setZoom($scope.canvasDiagrama().getZoom() * (5 / 4), true);
+      var factor = 1 / zoomFactor;
+
+      $scope.canvasDiagrama().setZoom($scope.canvasDiagrama().getZoom() * factor, true);
 
       for (var i = 0; i < $scope.canvasDiagrama().getLines().data.length; i++) {
         var stroke = $scope.canvasDiagrama().getLines().data[i].stroke;
-        $scope.canvasDiagrama().getLines().data[i].setStroke(stroke * (4 / 5));
+        $scope.canvasDiagrama().getLines().data[i].setStroke(stroke / factor);
+      };
+    }
+
+    $scope.zoomInit = function() {
+      var factor = $scope.canvasDiagrama().getZoom();
+      $scope.canvasDiagrama().setZoom(1, true);
+
+      for (var i = 0; i < $scope.canvasDiagrama().getLines().data.length; i++) {
+        var stroke = $scope.canvasDiagrama().getLines().data[i].stroke;
+        $scope.canvasDiagrama().getLines().data[i].setStroke(stroke * factor);
       };
     }
 
@@ -81,6 +96,7 @@
     $scope.conexion = function() {
       if ($scope.tipoConexion() == 'conexion') {
         if ($scope.visibilidadPuertos()) {
+          $scope.tipoConexion('');
           $scope.visibilidadPuertos(false);
         } else {
           $scope.visibilidadPuertos(true);
@@ -98,6 +114,7 @@
     $scope.linea = function() {
       if ($scope.tipoConexion() == 'linea') {
         if ($scope.visibilidadPuertos()) {
+          $scope.tipoConexion('');
           $scope.visibilidadPuertos(false);
         } else {
           $scope.visibilidadPuertos(true);
