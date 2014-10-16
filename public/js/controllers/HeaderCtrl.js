@@ -1,5 +1,5 @@
 (function() {
-  function HeaderCtrl($scope, $modal, FiguresSrvc, CalculosSrvc, StorageSrvc) {
+  function HeaderCtrl($scope, $rootScope, $modal, FiguresSrvc, CalculosSrvc, StorageSrvc) {
     ///////////////////////////////
     // ----------DATOS---------- //
     ///////////////////////////////
@@ -14,7 +14,7 @@
     /////////////////////////////////
     // ----------MÉTODOS---------- //
     /////////////////////////////////
-    var zoomFactor = 4 / 5;
+    var zoomFactor = 17 / 20;
     $scope.zoomIn = function() {
       var factor = zoomFactor;
 
@@ -45,6 +45,17 @@
         var stroke = $scope.canvasDiagrama().getLines().data[i].stroke;
         $scope.canvasDiagrama().getLines().data[i].setStroke(stroke * factor);
       };
+    }
+
+    $scope.panActivo = false;
+
+    $scope.pan = function() {
+      $rootScope.$broadcast('pan', $scope.panActivo);
+      $scope.panActivo = !$scope.panActivo;
+    }
+
+    $scope.reset = function() {
+      $rootScope.$broadcast('reset');
     }
 
     $scope.cargar = function(file) {

@@ -91,7 +91,7 @@ function FiguresSrvc(MixinSrvc) {
     var elmHight = elemento.getHeight();
 
     x = x - my.canvasDiagrama.getAbsoluteX() - (elmWidth / 2);
-    y = y - (elmWidth - width) / 2;
+    y = y - my.canvasDiagrama.getAbsoluteY();
 
     my.canvasDiagrama.add(elemento, x, y);
     my.canvasDiagrama.setCurrentSelection(elemento);

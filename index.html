@@ -35,8 +35,18 @@
             </div>
           </li>
           <li>
-            <div class="btn zoom-init" tooltip="Original" ng-click="zoomInit()">
+            <div class="btn zoom-init" tooltip="Tamaño original" ng-click="zoomInit()">
               <i class="fa fa-compress"></i>
+            </div>
+          </li>
+          <li>
+            <div class="btn pan" ng-class="{'activo': panActivo}" tooltip="Mover" ng-click="pan()">
+              <i class="fa fa-arrows"></i>
+            </div>
+          </li>
+          <li>
+            <div class="btn reset" tooltip="Posicion inicial" ng-click="reset()">
+              <i class="fa fa-retweet"></i>
             </div>
           </li>
           <li><div class="separador"></div></li>
