@@ -49,6 +49,9 @@ label {
   -webkit-border-radius: 0px 0px 0px 0px;
   -khtml-border-radius: 0px 0px 0px 0px;
 }
+.form-control:focus {
+  box-shadow: none;
+}
 .modal-dialog .modal-content {
   font-family: 'Source Sans Pro', sans-serif;
   border-radius: 0px 0px 0px 0px;
@@ -73,6 +76,20 @@ label {
   margin-top: 0px;
   opacity: 1;
   color: #FFF;
+}
+.modal-dialog .modal-footer {
+  padding: 10px 15px;
+}
+.modal-dialog .modal-footer .btn {
+  padding: 6px 13px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.modal-dialog .modal-footer .btn-primary {
+  background-color: #19a9d5;
+}
+.modal-dialog .modal-footer .btn-danger {
+  background-color: #f56666;
 }
 .nav-pills {
   border-bottom: 1px solid #444;
@@ -124,4 +141,13 @@ label {
   border-right: 1px solid #DDD;
   border-left: 1px solid #DDD;
   border-bottom: 1px solid #DDD;
+}
+.alert-danger {
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 0px 0px 0px 0px;
+  -ms-border-radius: 0px 0px 0px 0px;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -khtml-border-radius: 0px 0px 0px 0px;
 }

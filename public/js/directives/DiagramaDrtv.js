@@ -59,11 +59,12 @@
           });
 
           $rootScope.$on('reset', function() {
-            $canvas.offset(initOffset);
+            // $canvas.offset(initOffset);
             $canvas.animate({
               top: posTop,
               left: posLeft,
-            }, 500);
+              easing: 'easeOutSine',
+            }, 300);
           });
 
           $element.find('#canvas-diagrama').droppable({

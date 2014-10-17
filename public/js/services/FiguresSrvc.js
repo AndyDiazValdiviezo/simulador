@@ -93,6 +93,9 @@ function FiguresSrvc(MixinSrvc) {
     x = x - my.canvasDiagrama.getAbsoluteX() - (elmWidth / 2);
     y = y - my.canvasDiagrama.getAbsoluteY();
 
+    x = x * my.canvasDiagrama.getZoom();
+    y = y * my.canvasDiagrama.getZoom();
+
     my.canvasDiagrama.add(elemento, x, y);
     my.canvasDiagrama.setCurrentSelection(elemento);
     MixinSrvc.setElmSeleccionado(elemento);
@@ -148,6 +151,39 @@ function FiguresSrvc(MixinSrvc) {
 
       hiddenMy.visibilidadPuertos = value;
     };
+  }
+
+  my.validarDiagrama = function() {
+    var valido = true;
+    var mensaje = '';
+    var elementoId = '';
+
+    for (var i = 0; i < my.canvasDiagrama.figures.data.length; i++) {
+      var elemento = my.canvasDiagrama.figures.data[i];
+
+      for (var prop in elemento.getUserData()) {
+        if (elemento.getUserData().hasOwnProperty(prop)) {
+          var campo = elemento.getUserData()[prop];
+
+          if (typeof campo === 'object') {
+            if (campo.value == '' && campo.required) {
+              valido = false;
+              mensaje = 'Campos requeridos';
+              elementoId = elemento.id;
+              break;
+            };
+          };
+        }
+      }
+    };
+
+    var data = {
+      'valido': valido,
+      'mensaje': mensaje,
+      'elementoId': elementoId,
+    }
+
+    return data;
   }
 
   return my;

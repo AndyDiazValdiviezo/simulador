@@ -70,6 +70,7 @@ Conexion = draw2d.Connection.extend({
 
 Linea = draw2d.Connection.extend({
   NAME: 'Linea',
+  titulo: 'Linea',
   init: function() {
     this._super();
     this.setStroke(1.5);
@@ -83,21 +84,25 @@ Linea = draw2d.Connection.extend({
         name: 'admitanciaCapacitiva',
         label: 'Admitancia capacitiva',
         value: '',
+        required: true,
       },
       longitud: {
         name: 'longitud',
         label: 'Longitud',
         value: '',
+        required: true,
       },
       resistencia: {
         name: 'resistencia',
         label: 'Resistencia',
         value: '',
+        required: true,
       },
       reactancia: {
         name: 'reactancia',
         label: 'Reactancia',
         value: '',
+        required: true,
       },
     };
   },
@@ -145,20 +150,24 @@ Barra = Figure.extend({
         name: 'Voltaje',
         label: 'Voltaje',
         value: '',
+        required: true,
       },
       tipo: {
         name: 'tipo',
         value: 'C',
+        required: true,
       },
       desfase: {
         name: 'desfase',
         label: 'Desfase',
         value: '',
+        required: false,
       },
       faseTrafo: {
         name: 'faseTrafo',
         label: 'Fase trafo',
         value: '',
+        required: false,
       },
     }
   },
@@ -180,21 +189,25 @@ GeneradorSW = Figure.extend({
         name: 'voltajeModulo',
         label: 'Mod. Voltaje',
         value: '',
+        required: true,
       },
       voltajeAngulo: {
         name: 'voltajeAngulo',
         label: 'Ang. Voltaje',
         value: '',
+        required: false,
       },
       generaActiva: {
         name: 'generaActiva',
         label: 'Genera activa',
         value: '',
+        required: false,
       },
       generaReactiva: {
         name: 'generaReactiva',
         label: 'Genera reactiva',
         value: '',
+        required: false,
       },
     }
   },
@@ -216,31 +229,37 @@ GeneradorPV = Figure.extend({
         name: 'voltajeModulo',
         label: 'Mod. Voltaje',
         value: '',
+        required: true,
       },
       voltajeAngulo: {
         name: 'voltajeAngulo',
         label: 'Ang. Voltaje',
         value: '',
+        required: false,
       },
       generaActiva: {
         name: 'generaActiva',
         label: 'Genera activa',
         value: '',
+        required: false,
       },
       generaReactiva: {
         name: 'generaReactiva',
         label: 'Genera reactiva',
         value: '',
+        required: false,
       },
       minimaReactiva: {
         name: 'minimaReactiva',
         label: 'Mín. reactiva',
         value: '',
+        required: false,
       },
       maximaReactiva: {
         name: 'maximaReactiva',
         label: 'Max. reactiva',
         value: '',
+        required: false,
       },
     }
   },
@@ -262,35 +281,42 @@ Transformador2D = Figure.extend({
       admitanciaCapacitiva: {
         name: 'admitanciaCapacitiva',
         value: '',
+        required: true,
       },
       potenciaAparente: {
         name: 'potenciaAparente',
         label: 'Potencia aparente',
         value: '',
+        required: false,
       },
       voltajePrimario: {
         name: 'voltajePrimario',
         label: 'Voltaje prim',
         value: '',
+        required: false,
       },
       voltajeSecundario: {
         name: 'voltajeSecundario',
         label: 'Voltaje sec',
         value: '',
+        required: false,
       },
       tensionCortoCircuito: {
         name: 'tensionCortoCircuito',
         label: 'Tensión cc',
         value: '',
+        required: false,
       },
       faseTrafoJ: {
         name: 'faseTrafoJ',
-        value: '',
+        value: 0,
+        required: true,
       },
       grupoConexion: {
         name: 'grupoConexion',
         label: 'Grupo conexión',
         value: 'Yy0',
+        required: true,
         opciones: [{
           'value': 'Yy0',
           'text': 'Yy0',
@@ -388,11 +414,13 @@ Transformador3D = Figure.extend({
           name: 'potenciaAparente',
           label: 'Potencia aparente',
           value: '',
+          required: true,
         },
         tensionCortoCircuito: {
           name: 'tensionCortoCircuito',
           label: 'Tensión cc',
           value: '',
+          required: false,
         },
       },
       'i-k': {
@@ -401,11 +429,13 @@ Transformador3D = Figure.extend({
           name: 'potenciaAparente',
           label: 'Potencia aparente',
           value: '',
+          required: true,
         },
         tensionCortoCircuito: {
           name: 'tensionCortoCircuito',
           label: 'Tensión cc',
           value: '',
+          required: false,
         },
       },
       'j-k': {
@@ -414,22 +444,26 @@ Transformador3D = Figure.extend({
           name: 'potenciaAparente',
           label: 'Potencia aparente',
           value: '',
+          required: true,
         },
         tensionCortoCircuito: {
           name: 'tensionCortoCircuito',
           label: 'Tensión cc',
           value: '',
+          required: false,
         },
       },
       titulo: 'Datos generales',
       admitanciaCapacitiva: {
         name: 'admitanciaCapacitiva',
         value: '',
+        required: true,
       },
       grupoConexion: {
         name: 'grupoConexion',
         label: 'Grupo conexión',
         value: 'YNynd5',
+        required: true,
         opciones: [{
           value: 'YNynd5',
           text: 'YNynd5',
@@ -442,11 +476,13 @@ Transformador3D = Figure.extend({
         name: 'voltajePrimario',
         label: 'Voltaje prim',
         value: '',
+        required: true,
       },
       voltajeSecundario: {
         name: 'voltajeSecundario',
         label: 'Voltaje sec',
         value: '',
+        required: true,
       },
     };
   },
@@ -468,11 +504,13 @@ Carga = Figure.extend({
         name: 'cargaActiva',
         label: 'Carga activa',
         value: '',
+        required: true,
       },
       cargaReactiva: {
         name: 'cargaReactiva',
         label: 'Carga reactiva',
         value: '',
+        required: true,
       },
     };
   },

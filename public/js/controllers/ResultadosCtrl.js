@@ -27,29 +27,6 @@
       };
     };
 
-
-    $scope.dataPotencias = {};
-
-    for (var i = 0; i < $scope.cantidadBarras(); i++) {
-      for (var j = 0; j < $scope.cantidadBarras(); j++) {
-        var prop = '[' + (i + 1) + ' - ' + (j + 1) + ']';
-
-        var activa = resultados.P.subset(math.index(i, j));
-        var reactiva = resultados.Q.subset(math.index(i, j));
-
-        if (activa) {
-          $scope.dataPotencias[prop] = {
-            activa: math.round(
-              activa, $rootScope.numDecimales
-            ).toString(),
-            reactiva: math.round(
-              reactiva, $rootScope.numDecimales
-            ).toString(),
-          }
-        };
-      };
-    };
-
     $scope.dataVoltajes = {};
 
     for (var i = 0; i < $scope.cantidadBarras(); i++) {

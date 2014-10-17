@@ -69,7 +69,7 @@
       var modalInstance = $modal.open({
         templateUrl: 'public/templates/saveAs.html',
         controller: 'SaveAsCtrl',
-        size: 'md',
+        size: 'sm',
         resolve: {},
       });
 
@@ -141,21 +141,39 @@
     }
 
     $scope.calcular = function() {
-      var aElementos = [];
+      var validacion = FiguresSrvc.validarDiagrama();
 
-      for (var i = 0; i < $scope.canvasDiagrama().figures.data.length; i++) {
-        aElementos.push($scope.canvasDiagrama().figures.data[i].userData);
-      };
-      for (var i = 0; i < $scope.canvasDiagrama().lines.data.length; i++) {
-        var line = $scope.canvasDiagrama().lines.data[i];
+      if (validacion.valido) {
+        var aElementos = [];
 
-        if (line.NAME == 'Linea') {
-          aElementos.push($scope.canvasDiagrama().lines.data[i].userData);
+        for (var i = 0; i < $scope.canvasDiagrama().figures.data.length; i++) {
+          aElementos.push($scope.canvasDiagrama().figures.data[i].userData);
         };
-      };
+        for (var i = 0; i < $scope.canvasDiagrama().lines.data.length; i++) {
+          var line = $scope.canvasDiagrama().lines.data[i];
 
-      var resultados = CalculosSrvc.calculoIterativo(FiguresSrvc.cantidadBarras(), aElementos);
-      $scope.mostrarResultados(resultados);
+          if (line.NAME == 'Linea') {
+            aElementos.push($scope.canvasDiagrama().lines.data[i].userData);
+          };
+        };
+
+        var resultados = CalculosSrvc.calculoIterativo(FiguresSrvc.cantidadBarras(), aElementos);
+        $scope.mostrarResultados(resultados);
+
+      } else {
+        $scope.canvasDiagrama().getFigure(validacion.elementoId).fireEvent('click');
+
+        var modalInstance = $modal.open({
+          templateUrl: 'templates/error.html',
+          controller: 'ErrorCtrl',
+          size: 'sm',
+          resolve: {
+            mensaje: function() {
+              return validacion.mensaje;
+            },
+          },
+        });
+      };
     }
 
     $scope.mostrarResultados = function(resultados) {

@@ -36,6 +36,10 @@ label{
   box-shadow: none;
   .corner(0px, 0px, 0px, 0px);
 }
+.form-control:focus{
+  box-shadow: none;
+  // border: 1px solid @cl-verde;
+}
 
 // Diálogo modal
 .modal-dialog{
@@ -58,6 +62,20 @@ label{
         span{
         }
       }
+    }
+  }
+  .modal-footer{
+    padding: 10px 15px;
+    .btn{
+      padding: 6px 13px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .btn-primary{
+      background-color: @cl-celeste;
+    }
+    .btn-danger{
+      background-color: @cl-rojo;
     }
   }
 }
@@ -117,4 +135,11 @@ label{
   border-right: 1px solid #DDD;
   border-left: 1px solid #DDD;
   border-bottom: 1px solid #DDD;
+}
+
+// Alertas
+.alert-danger{
+  margin-bottom: 15px;
+  border: none;
+  .corner(0px, 0px, 0px, 0px);
 }
